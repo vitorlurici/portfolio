@@ -1,0 +1,64 @@
+#root {
+  margin: 0 auto;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+
+  .header-container {
+    padding: 24px 80px;
+    display: flex;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    justify-content: space-between;
+    width: 100%;
+
+    .logo {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      gap: 12px;
+
+      .icon {
+        width: 46px;
+        height: 46px;
+      }
+
+      .logo-text {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+
+        span {
+          color: #8fa691;
+        }
+
+        .name {
+          font-size: 20px;
+          font-weight: bold;
+        }
+
+        .description {
+          font-size: 12px;
+        }
+      }
+    }
+
+    .menu {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+
+      span {
+        font-size: 16px;
+        color: #8fa691;
+        font-weight: bold;
+      }
+    }
+  }
+}
