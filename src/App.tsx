@@ -1,5 +1,6 @@
 import "./App.scss";
 import { LogoIcon } from "./assets/svg/LogoIcon";
+import { MenuIcon } from "./assets/svg/MenuIcon";
 
 function App() {
   return (
@@ -14,8 +15,24 @@ function App() {
         </div>
         <div className="menu">
           <span>MENU</span>
+          <MenuIcon />
         </div>
       </header>
+      <div className="content">
+        <div className="introduction">
+          <div className="content-left">
+            <span>VITOR LURICI</span>
+            <h1>Front-end and Back-end Engineer</h1>
+            <h4>
+              During my three years as a software engineering student, I honed
+              strong critical and analytical skills, consistently delivering
+              high-quality results in deadline-driven projects.
+            </h4>
+            <button>View Projects</button>
+          </div>
+          <div className="content-right"></div>
+        </div>
+      </div>
     </main>
   );
 }

@@ -24,7 +24,7 @@
       cursor: pointer;
       gap: 12px;
 
-      .icon {
+      .logo-icon {
         width: 46px;
         height: 46px;
       }
@@ -35,7 +35,7 @@
         text-align: center;
 
         span {
-          color: #8fa691;
+          color: #264144;
         }
 
         .name {
@@ -53,11 +53,59 @@
       display: flex;
       align-items: center;
       cursor: pointer;
+      gap: 12px;
 
       span {
         font-size: 16px;
-        color: #8fa691;
+        color: #264144;
         font-weight: bold;
+      }
+
+      .menu-icon {
+        width: 24px;
+        height: 24px;
+        fill: #264144;
+      }
+    }
+  }
+
+  .content {
+    padding-inline: 240px;
+
+    .introduction {
+      display: flex;
+
+      .content-left {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 600px;
+        width: 40%;
+        gap: 20px;
+
+        h1 {
+          color: #264144;
+        }
+
+        span {
+          letter-spacing: 2px;
+        }
+
+        button {
+          background-color: #264144;
+          border-style: none;
+          padding-block: 16px;
+          width: 200px;
+          border-radius: 24px;
+          cursor: pointer;
+          transition: 0.5s;
+          font-size: 16px;
+
+          &:hover {
+            transition: 0.5s;
+            background-color: #5f6c6d;
+          }
+        }
       }
     }
   }
