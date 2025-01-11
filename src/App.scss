@@ -17,30 +17,55 @@
     user-select: none;
     justify-content: space-between;
     width: 100%;
+    position: fixed;
+    top: 0;
 
     .logo {
       display: flex;
       align-items: center;
       cursor: pointer;
-      gap: 12px;
+      gap: 4px;
+
+      &:hover {
+        .logo-icon {
+          transition: 0.5s;
+          padding: 0;
+          padding-left: 4px;
+          padding-bottom: 4px;
+          fill: #cccccc;
+          stroke: #cccccc;
+        }
+        .logo-text {
+          span {
+            color: #cccccc;
+            transition: 0.5s;
+          }
+        }
+      }
 
       .logo-icon {
         width: 46px;
         height: 46px;
+        padding: 4px;
+        transition: 0.5s;
+        fill: #678184;
+        stroke: #678184;
       }
 
       .logo-text {
         display: flex;
         flex-direction: column;
-        text-align: center;
 
         span {
-          color: #264144;
+          color: #678184;
+          transition: 0.5s;
+          text-align: center;
         }
 
         .name {
           font-size: 20px;
           font-weight: bold;
+          letter-spacing: 2px;
         }
 
         .description {
@@ -55,44 +80,59 @@
       cursor: pointer;
       gap: 12px;
 
+      &:hover {
+        span {
+          transition: 0.5s;
+          color: #cccccc;
+        }
+        .menu-icon {
+          transition: 0.5s;
+          fill: #cccccc;
+        }
+      }
+
       span {
         font-size: 16px;
-        color: #264144;
+        color: #678184;
         font-weight: bold;
+        transition: 0.5s;
       }
 
       .menu-icon {
         width: 24px;
         height: 24px;
-        fill: #264144;
+        fill: #678184;
+        transition: 0.5s;
       }
     }
   }
 
   .content {
-    padding-inline: 240px;
-
+    display: flex;
+    flex-direction: column;
+    width: 72vw;
+    align-self: center;
     .introduction {
       display: flex;
+      align-items: center;
+      height: 100vh;
 
       .content-left {
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        height: 600px;
         width: 40%;
         gap: 20px;
 
         h1 {
-          color: #264144;
+          color: #678184;
         }
 
         span {
-          letter-spacing: 2px;
+          letter-spacing: 8px;
         }
 
         button {
-          background-color: #264144;
+          background-color: #678184;
           border-style: none;
           padding-block: 16px;
           width: 200px;
@@ -102,10 +142,16 @@
           font-size: 16px;
 
           &:hover {
+            color: #678184;
             transition: 0.5s;
-            background-color: #5f6c6d;
+            background-color: #cccccc;
           }
         }
+      }
+    }
+    .projects {
+      h1 {
+        color: #678184;
       }
     }
   }

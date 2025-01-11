@@ -32,6 +32,9 @@ function App() {
           </div>
           <div className="content-right"></div>
         </div>
+        <div className="projects">
+          <h1>Projetos</h1>
+        </div>
       </div>
     </main>
   );
