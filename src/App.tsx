@@ -1,8 +1,17 @@
 import "./App.scss";
 import { LogoIcon } from "./assets/svg/LogoIcon";
 import { MenuIcon } from "./assets/svg/MenuIcon";
+import { useRef } from "react";
 
 function App() {
+  const projectsRef = useRef<HTMLDivElement | null>(null);
+
+  const scrollToProjects = () => {
+    if (projectsRef.current) {
+      projectsRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <main className="main-container">
       <header className="header-container">
@@ -28,12 +37,30 @@ function App() {
               strong critical and analytical skills, consistently delivering
               high-quality results in deadline-driven projects.
             </h4>
-            <button>View Projects</button>
+            <div className="main-links">
+              <button onClick={scrollToProjects}>View Projects</button>
+              <p>or</p>
+              <button onClick={scrollToProjects}>Read About Me</button>
+            </div>
           </div>
           <div className="content-right"></div>
         </div>
-        <div className="projects">
-          <h1>Projetos</h1>
+        <div ref={projectsRef} className="projects">
+          <div className="title">
+            <span>ACADEMIC & PERSONAL</span>
+            <h1>Projects</h1>
+          </div>
+          <div className="grid">
+            <div className="item">
+              <p>2024</p>
+              <h2>COSMOS</h2>
+              <p>
+                A captivating space exploration site utilizing NASA APIs, Google
+                Translate, and Spaceflight News API. Developed with React, Vite,
+                JavaScript, Firebase, and SCSS.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </main>
