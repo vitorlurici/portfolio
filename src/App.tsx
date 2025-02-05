@@ -59,6 +59,37 @@ function App() {
                 Translate, and Spaceflight News API. Developed with React, Vite,
                 JavaScript, Firebase, and SCSS.
               </p>
+              <p className="view-git">View Project on GitHub →</p>
+            </div>
+            <div className="item">
+              <p>2024</p>
+              <h2>COSMOS</h2>
+              <p>
+                A captivating space exploration site utilizing NASA APIs, Google
+                Translate, and Spaceflight News API. Developed with React, Vite,
+                JavaScript, Firebase, and SCSS.
+              </p>
+              <p className="view-git">View Project on GitHub →</p>
+            </div>
+            <div className="item">
+              <p>2024</p>
+              <h2>COSMOS</h2>
+              <p>
+                A captivating space exploration site utilizing NASA APIs, Google
+                Translate, and Spaceflight News API. Developed with React, Vite,
+                JavaScript, Firebase, and SCSS.
+              </p>
+              <p className="view-git">View Project on GitHub →</p>
+            </div>
+            <div className="item">
+              <p>2024</p>
+              <h2>COSMOS</h2>
+              <p>
+                A captivating space exploration site utilizing NASA APIs, Google
+                Translate, and Spaceflight News API. Developed with React, Vite,
+                JavaScript, Firebase, and SCSS.
+              </p>
+              <p className="view-git">View Project on GitHub →</p>
             </div>
           </div>
         </div>

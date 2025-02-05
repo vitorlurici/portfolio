@@ -117,7 +117,7 @@
     .introduction {
       display: flex;
       align-items: center;
-      height: 100vh;
+      min-height: 100vh;
 
       .content-left {
         display: flex;
@@ -157,11 +157,12 @@
       }
     }
     .projects {
-      height: 100vh;
       display: flex;
+      min-height: 100vh;
       flex-direction: column;
       padding-top: 120px;
       gap: 80px;
+      width: 100%;
       h1 {
         color: #678184;
       }
@@ -175,17 +176,38 @@
 
       .grid {
         display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
         .item {
           display: flex;
           flex-direction: column;
           padding: 40px;
           cursor: pointer;
           background-image: url(./assets/images/cosmos-background.jpg);
-          background-size: cover;
-          width: 30vw;
-          height: 80vh;
-          max-width: 640px;
-          max-height: 800px;
+          width: 640px;
+          height: 800px;
+          background-position: center;
+
+          transition: 0.5s;
+          background-blend-mode: multiply;
+
+          .view-git {
+            color: #fff;
+            opacity: 0;
+            transition: 0.5s;
+          }
+
+          &:hover {
+            background-position: top left;
+            transition: 0.5s;
+            background-color: #678184;
+
+            .view-git {
+              margin-top: 20px;
+              transition: 0.5s;
+              opacity: 100;
+            }
+          }
 
           p {
             color: #cccccc;
