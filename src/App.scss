@@ -110,7 +110,8 @@
   .content {
     display: flex;
     flex-direction: column;
-    width: 72vw;
+    width: 100%;
+    max-width: 1360px;
     align-self: center;
     align-items: center;
     z-index: 0;
@@ -162,7 +163,6 @@
       flex-direction: column;
       padding-top: 120px;
       gap: 80px;
-      width: 100%;
       h1 {
         color: #678184;
       }
@@ -177,15 +177,13 @@
       .grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+        gap: 120px;
 
         .item {
           display: flex;
           flex-direction: column;
-          padding: 40px;
-          cursor: pointer;
-          background-image: url(./assets/images/cosmos-background.jpg);
-          width: 640px;
-          height: 800px;
+          padding: 20px;
+          height: 780px;
           background-position: center;
 
           transition: 0.5s;
@@ -198,7 +196,7 @@
           }
 
           &:hover {
-            background-position: top left;
+            background-position: left top;
             transition: 0.5s;
             background-color: #678184;
 
@@ -211,8 +209,13 @@
 
           p {
             color: #cccccc;
-            letter-spacing: 2px;
           }
+        }
+        .item.cosmos {
+          background-image: url(./assets/images/cosmos-background.jpg);
+        }
+        .item.vetlink {
+          background-image: url(./assets/images/vetlink-background.jpg);
         }
       }
     }

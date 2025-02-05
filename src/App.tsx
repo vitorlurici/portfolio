@@ -51,26 +51,39 @@ function App() {
             <h1>Projects</h1>
           </div>
           <div className="grid">
-            <div className="item">
-              <p>2024</p>
-              <h2>COSMOS</h2>
-              <p>
-                A captivating space exploration site utilizing NASA APIs, Google
-                Translate, and Spaceflight News API. Developed with React, Vite,
-                JavaScript, Firebase, and SCSS.
-              </p>
-              <p className="view-git">View Project on GitHub →</p>
-            </div>
-            <div className="item">
-              <p>2024</p>
-              <h2>COSMOS</h2>
-              <p>
-                A captivating space exploration site utilizing NASA APIs, Google
-                Translate, and Spaceflight News API. Developed with React, Vite,
-                JavaScript, Firebase, and SCSS.
-              </p>
-              <p className="view-git">View Project on GitHub →</p>
-            </div>
+            <a
+              href="https://github.com/GabrielRogerioMessias/project-integrator-VI-vet-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div className="item vetlink">
+                <p>2024</p>
+                <h2>VETLINK</h2>
+                <p>
+                  A mobile app designed for veterinary students and
+                  professionals, offering detailed information on various
+                  zoonoses and enabling personal note-taking. Developed with
+                  React Native + Expo, TypeScript, and Firebase.
+                </p>
+                <p className="view-git">View Project on GitHub →</p>
+              </div>
+            </a>
+            <a
+              href="https://github.com/vitorlurici/cosmos"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div className="item cosmos">
+                <p>2024</p>
+                <h2>COSMOS</h2>
+                <p>
+                  A captivating space exploration site utilizing NASA APIs,
+                  Google Translate, and Spaceflight News API. Developed with
+                  React + Vite, JavaScript, Firebase, and SCSS.
+                </p>
+                <p className="view-git">View Project on GitHub →</p>
+              </div>
+            </a>
             <div className="item">
               <p>2024</p>
               <h2>COSMOS</h2>
