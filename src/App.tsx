@@ -1,22 +1,47 @@
 import "./App.scss";
 import { LogoIcon } from "./assets/svg/LogoIcon";
 import { MenuIcon } from "./assets/svg/MenuIcon";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 
 function App() {
   const projectsRef = useRef<HTMLDivElement | null>(null);
   const aboutMeRef = useRef<HTMLDivElement | null>(null);
+  const introductionRef = useRef<HTMLDivElement | null>(null);
+
+  const [showScrollUp, setShowScrollUp] = useState(false);
 
   const scrollToProjects = () => {
     if (projectsRef.current) {
       projectsRef.current.scrollIntoView({ behavior: "smooth" });
     }
   };
+
   const scrollToAboutMe = () => {
     if (aboutMeRef.current) {
       aboutMeRef.current.scrollIntoView({ behavior: "smooth" });
     }
   };
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (introductionRef.current) {
+        const introductionHeight = introductionRef.current.offsetHeight;
+        const triggerHeight = introductionHeight * 0.5;
+        const scrollPosition = window.scrollY;
+
+        setShowScrollUp(scrollPosition > triggerHeight);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <main className="main-container">
@@ -34,7 +59,7 @@ function App() {
         </div>
       </header>
       <div className="content">
-        <div className="introduction">
+        <div ref={introductionRef} className="introduction">
           <div className="content-left">
             <span>VITOR LURICI</span>
             <h1>Software Engineer</h1>
@@ -123,6 +148,12 @@ function App() {
           </h3>
         </div>
       </div>
+      <button
+        className={`scroll-up ${showScrollUp ? "visible" : "hidden"}`}
+        onClick={scrollToTop}
+      >
+        ↑
+      </button>
     </main>
   );
 }
