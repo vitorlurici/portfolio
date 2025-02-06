@@ -163,11 +163,11 @@
       flex-direction: column;
       padding-top: 120px;
       gap: 80px;
-      h1 {
-        color: #678184;
-      }
 
       .title {
+        h1 {
+          color: #678184;
+        }
         span {
           font-size: 12px;
           letter-spacing: 4px;
@@ -196,7 +196,7 @@
           }
 
           &:hover {
-            background-position: left top;
+            background-position: right bottom;
             transition: 0.5s;
             background-color: #678184;
 
@@ -216,6 +216,28 @@
         }
         .item.vetlink {
           background-image: url(./assets/images/vetlink-background.jpg);
+        }
+        .item.finance {
+          background-image: url(./assets/images/finance-background.jpg);
+        }
+      }
+    }
+
+    .about-me {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      padding-top: 120px;
+      width: 100%;
+      gap: 80px;
+
+      .title {
+        h1 {
+          color: #678184;
+        }
+        span {
+          font-size: 12px;
+          letter-spacing: 4px;
         }
       }
     }
