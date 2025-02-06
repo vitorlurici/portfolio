@@ -93,8 +93,7 @@ function App() {
                 <p>
                   A mobile app designed for veterinary students and
                   professionals, offering detailed information on various
-                  zoonoses and enabling personal note-taking. Developed with
-                  React Native + Expo, TypeScript, and Firebase.
+                  zoonoses and enabling personal note-taking.
                 </p>
                 <p className="view-git">View Project on GitHub →</p>
               </div>
@@ -109,8 +108,7 @@ function App() {
                 <h2>COSMOS</h2>
                 <p>
                   A captivating space exploration Website utilizing NASA APIs,
-                  Google Translate, and Spaceflight News API. Developed with
-                  React + Vite, JavaScript, Firebase, and SCSS.
+                  Google Translate, and Spaceflight News API.
                 </p>
                 <p className="view-git">View Project on GitHub →</p>
               </div>
@@ -124,9 +122,9 @@ function App() {
                 <p>2023 - In Progress</p>
                 <h2>FINANCE</h2>
                 <p>
-                  A captivating space exploration site utilizing NASA APIs,
-                  Google Translate, and Spaceflight News API. Developed with
-                  React, Vite, JavaScript, Firebase, and SCSS.
+                  A personal finance management application currently under
+                  development. It enables users to track and manage their income
+                  and expenses efficiently.
                 </p>
                 <p className="view-git">View Project on GitHub →</p>
               </div>
