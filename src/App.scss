@@ -23,7 +23,6 @@
     .logo {
       display: flex;
       align-items: center;
-      cursor: pointer;
       gap: 4px;
 
       &:hover {
@@ -241,6 +240,39 @@
         }
       }
     }
+
+    footer {
+      width: 100%;
+
+      hr {
+        width: 100%;
+        opacity: 40%;
+        color: #cccccc;
+      }
+
+      .footer-content {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 40px;
+        margin-block: 80px;
+
+        h4 {
+          color: #678184;
+        }
+
+        .copyright {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          .logo-icon {
+            width: 40px;
+            height: 40px;
+            fill: #cccccc;
+            stroke: #cccccc;
+          }
+        }
+      }
+    }
   }
 
   .scroll-up {
@@ -258,7 +290,7 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    transition: 0.3s ease;
   }
 
   .scroll-up.visible {
@@ -274,6 +306,7 @@
   }
 
   .scroll-up:hover {
+    background-color: #fff;
     transform: scale(1.1);
   }
 }

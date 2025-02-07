@@ -46,13 +46,15 @@ function App() {
   return (
     <main className="main-container">
       <header className="header-container">
-        <div className="logo">
-          <LogoIcon />
-          <div className="logo-text">
-            <span className="name">Vitor Lurici</span>
-            <span className="description">SOFTWARE ENGINEER</span>
+        <a href="/">
+          <div className="logo">
+            <LogoIcon />
+            <div className="logo-text">
+              <span className="name">Vitor Lurici</span>
+              <span className="description">SOFTWARE ENGINEER</span>
+            </div>
           </div>
-        </div>
+        </a>
         <div className="menu">
           <span>MENU</span>
           <MenuIcon />
@@ -145,6 +147,31 @@ function App() {
             innovation and problem-solving.
           </h3>
         </div>
+        <footer>
+          <hr />
+          <div className="footer-content">
+            <div className="footer-contacts">
+              <h4>— Contact information</h4>
+            </div>
+            <div className="footer-projects">
+              <h4>— Latest projects</h4>
+            </div>
+            <div className="footer-availabity">
+              <h4>— Availabity</h4>
+            </div>
+            <div className="footer-socials">
+              <h4>— Follow me on</h4>
+            </div>
+            <div className="copyright">
+              <a href="/">
+                <LogoIcon />
+              </a>
+              <div className="copyright-text">
+                © {new Date().getFullYear()} Vitor Lurici.
+              </div>
+            </div>
+          </div>
+        </footer>
       </div>
       <button
         className={`scroll-up ${showScrollUp ? "visible" : "hidden"}`}
