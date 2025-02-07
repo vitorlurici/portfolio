@@ -65,11 +65,11 @@ function App() {
           <div className="content-left">
             <span>VITOR LURICI</span>
             <h1>Software Engineer</h1>
-            <h4>
+            <h3>
               During my three years as a software engineering student, I honed
               strong critical and analytical skills, consistently delivering
               high-quality results in deadline-driven projects.
-            </h4>
+            </h3>
             <div className="main-links">
               <button onClick={scrollToProjects}>View Projects</button>
               <p>or</p>
@@ -150,25 +150,96 @@ function App() {
         <footer>
           <hr />
           <div className="footer-content">
-            <div className="footer-contacts">
+            <div className="footer-column">
               <h4>— Contact information</h4>
+              <p>Feel free to contact me anytime.</p>
+              <ul>
+                <li>
+                  E:{" "}
+                  <a
+                    href="mailto:vitorluricii@hotmail.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    vitorluricii@hotmail.com
+                  </a>
+                </li>
+                <li>
+                  P:{" "}
+                  <a
+                    href="https://wa.me/5514996825293"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    +55 14 99682-5293
+                  </a>
+                </li>
+              </ul>
             </div>
-            <div className="footer-projects">
+            <div className="footer-column">
               <h4>— Latest projects</h4>
+              <ul>
+                <li>
+                  {" "}
+                  <a
+                    href="https://github.com/GabrielRogerioMessias/project-integrator-VI-vet-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Vetlink{" "}
+                  </a>
+                </li>
+                <li>
+                  {" "}
+                  <a
+                    href="https://github.com/vitorlurici/cosmos"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Cosmos
+                  </a>
+                </li>
+                <li>
+                  {" "}
+                  <a
+                    href="https://github.com/vitorlurici/finance-project"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Finance
+                  </a>
+                </li>
+              </ul>
             </div>
-            <div className="footer-availabity">
+            <div className="footer-column">
               <h4>— Availabity</h4>
+              <p>
+                I am currently available and eager to explore exciting job
+                opportunities that align with my skills and experience. Let’s
+                connect!
+              </p>
             </div>
-            <div className="footer-socials">
+            <div className="footer-column">
               <h4>— Follow me on</h4>
+              <ul>
+                <li>
+                  <a
+                    href="https://www.instagram.com/vitorlmoraes/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Instagram
+                  </a>
+                </li>
+              </ul>
             </div>
             <div className="copyright">
               <a href="/">
                 <LogoIcon />
               </a>
-              <div className="copyright-text">
+              <p className="copyright-text">
                 © {new Date().getFullYear()} Vitor Lurici.
-              </div>
+              </p>
             </div>
           </div>
         </footer>

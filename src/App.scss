@@ -205,10 +205,6 @@
               opacity: 100;
             }
           }
-
-          p {
-            color: #cccccc;
-          }
         }
         .item.cosmos {
           background-image: url(./assets/images/cosmos-background.jpg);
@@ -246,7 +242,7 @@
 
       hr {
         width: 100%;
-        opacity: 40%;
+        opacity: 50%;
         color: #cccccc;
       }
 
@@ -256,8 +252,24 @@
         gap: 40px;
         margin-block: 80px;
 
+        a {
+          color: #678184;
+          transition: 0.3s ease;
+
+          &:hover {
+            transition: 0.3s ease;
+            text-decoration: underline;
+          }
+        }
+
         h4 {
           color: #678184;
+        }
+
+        .footer-column {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
         }
 
         .copyright {
