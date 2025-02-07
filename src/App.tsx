@@ -224,6 +224,15 @@ function App() {
               <ul>
                 <li>
                   <a
+                    href="https://github.com/vitorlurici"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    GitHub
+                  </a>
+                </li>
+                <li>
+                  <a
                     href="https://www.instagram.com/vitorlmoraes/"
                     target="_blank"
                     rel="noopener noreferrer"
