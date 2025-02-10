@@ -7,7 +7,9 @@ function App() {
   const projectsRef = useRef<HTMLDivElement | null>(null);
   const aboutMeRef = useRef<HTMLDivElement | null>(null);
   const introductionRef = useRef<HTMLDivElement | null>(null);
-
+  const [visibleSections, setVisibleSections] = useState<Set<string>>(
+    new Set()
+  );
   const [showScrollUp, setShowScrollUp] = useState(false);
 
   const scrollToProjects = () => {
@@ -25,6 +27,26 @@ function App() {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setVisibleSections((prev) => new Set(prev).add(entry.target.id));
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    const sections = document.querySelectorAll(".animated-section");
+    sections.forEach((section) => observer.observe(section));
+
+    return () => {
+      sections.forEach((section) => observer.unobserve(section));
+    };
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -61,7 +83,13 @@ function App() {
         </div>
       </header>
       <div className="content">
-        <div ref={introductionRef} className="introduction">
+        <div
+          ref={introductionRef}
+          id="introduction"
+          className={`animated-section introduction ${
+            visibleSections.has("introduction") ? "visible" : ""
+          }`}
+        >
           <div className="content-left">
             <span>VITOR LURICI</span>
             <h1>Software Engineer</h1>
@@ -78,7 +106,13 @@ function App() {
           </div>
           <div className="content-right"></div>
         </div>
-        <div ref={projectsRef} className="projects">
+        <div
+          ref={projectsRef}
+          id="projects"
+          className={`animated-section projects ${
+            visibleSections.has("projects") ? "visible" : ""
+          }`}
+        >
           <div className="title">
             <span>ACADEMIC & PERSONAL</span>
             <h1>Projects</h1>
@@ -133,7 +167,13 @@ function App() {
             </a>
           </div>
         </div>
-        <div ref={aboutMeRef} className="about-me">
+        <div
+          ref={aboutMeRef}
+          id="about-me"
+          className={`animated-section about-me ${
+            visibleSections.has("about-me") ? "visible" : ""
+          }`}
+        >
           <div className="title">
             <span>A FEW WORDS</span>
             <h1>About Me</h1>
