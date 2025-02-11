@@ -2,6 +2,20 @@ import "./App.scss";
 import { LogoIcon } from "./assets/svg/LogoIcon";
 import { MenuIcon } from "./assets/svg/MenuIcon";
 import { useRef, useState, useEffect } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faCss3Alt,
+  faFigma,
+  faFlutter,
+  faHtml5,
+  faJava,
+  faJira,
+  faJs,
+  faNode,
+  faPython,
+  faReact,
+  faTrello,
+} from "@fortawesome/free-brands-svg-icons";
 
 function App() {
   const projectsRef = useRef<HTMLDivElement | null>(null);
@@ -184,8 +198,82 @@ function App() {
             collaborate effectively in team environments. Currently pursuing a
             degree in Software Engineering, I have gained hands-on experience
             through personal and academic projects, demonstrating a passion for
-            innovation and problem-solving.
+            innovation and problem-solving. In my spare time I enjoy traveling
+            and playing video games.
           </h3>
+          <div className="skills">
+            <h2>Tech Skills</h2>
+
+            <div className="logos">
+              <FontAwesomeIcon
+                icon={faHtml5}
+                style={{ color: "#ffffff" }}
+                size="2xl"
+              />
+              <FontAwesomeIcon
+                icon={faCss3Alt}
+                style={{ color: "#ffffff" }}
+                size="2xl"
+              />
+              <FontAwesomeIcon
+                icon={faJs}
+                style={{ color: "#ffffff" }}
+                size="2xl"
+              />
+              <FontAwesomeIcon
+                icon={faReact}
+                style={{ color: "#ffffff" }}
+                size="2xl"
+              />
+              <FontAwesomeIcon
+                icon={faPython}
+                style={{ color: "#ffffff" }}
+                size="2xl"
+              />
+              <FontAwesomeIcon
+                icon={faJava}
+                style={{ color: "#ffffff" }}
+                size="2xl"
+              />
+              <FontAwesomeIcon
+                icon={faNode}
+                style={{ color: "#ffffff" }}
+                size="2xl"
+              />
+              <FontAwesomeIcon
+                icon={faFlutter}
+                style={{ color: "#ffffff" }}
+                size="2xl"
+              />
+              <FontAwesomeIcon
+                icon={faFigma}
+                style={{ color: "#ffffff" }}
+                size="2xl"
+              />
+              <FontAwesomeIcon
+                icon={faJira}
+                style={{ color: "#ffffff" }}
+                size="2xl"
+              />
+              <FontAwesomeIcon
+                icon={faHtml5}
+                style={{ color: "#ffffff" }}
+                size="2xl"
+              />
+              <FontAwesomeIcon
+                icon={faTrello}
+                style={{ color: "#ffffff" }}
+                size="2xl"
+              />
+            </div>
+          </div>
+          <a
+            href="https://github.com/user-attachments/files/18648395/Vitor_Lurici_CV.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button>Download my CV</button>
+          </a>
         </div>
         <footer>
           <hr />

@@ -144,28 +144,17 @@
         span {
           letter-spacing: 8px;
         }
-
-        button {
-          background-color: #678184;
-          border-style: none;
-          padding-block: 16px;
-          width: 200px;
-          border-radius: 24px;
-          cursor: pointer;
-          transition: 0.5s;
-          font-size: 16px;
-
-          &:hover {
-            color: #678184;
-            transition: 0.5s;
-            background-color: #cccccc;
-          }
-        }
         .main-links {
           display: flex;
           gap: 20px;
           align-items: center;
         }
+      }
+
+      .content-right {
+        display: flex;
+        width: 60%;
+        justify-content: center;
       }
     }
     .projects {
@@ -238,6 +227,10 @@
       width: 100%;
       gap: 80px;
 
+      a {
+        width: fit-content;
+      }
+
       .title {
         h1 {
           color: #678184;
@@ -245,6 +238,18 @@
         span {
           font-size: 12px;
           letter-spacing: 4px;
+        }
+      }
+
+      .skills {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .logos {
+          display: flex;
+          width: 100%;
+          justify-content: space-between;
         }
       }
     }
