@@ -128,7 +128,7 @@ function App() {
           }`}
         >
           <div className="title">
-            <span>SELECTED ACADEMIC & PERSONAL</span>
+            <span>ACADEMIC & PERSONAL</span>
             <h1>Projects</h1>
           </div>
           <div className="grid">
