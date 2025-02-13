@@ -82,7 +82,7 @@ function App() {
   return (
     <main className="main-container">
       <header className="header-container">
-        <a href="/">
+        <a href="/portfolio">
           <div className="logo">
             <LogoIcon />
             <div className="logo-text">
@@ -371,7 +371,7 @@ function App() {
               </ul>
             </div>
             <div className="copyright">
-              <a href="/">
+              <a href="/portfolio">
                 <LogoIcon />
               </a>
               <p className="copyright-text">
