@@ -149,6 +149,10 @@
         display: flex;
         width: 60%;
         justify-content: center;
+
+        img {
+          width: 600px;
+        }
       }
     }
     .projects {
@@ -344,6 +348,13 @@
 @media (max-width: 1300px) {
   .main-container {
     .content {
+      .introduction {
+        .content-right {
+          img {
+            width: 400px;
+          }
+        }
+      }
       .projects {
         .grid {
           .item {
@@ -422,13 +433,19 @@
       .introduction {
         flex-direction: column;
         justify-content: center;
+        gap: 80px;
 
         .content-left {
           width: auto;
+          padding-top: 200px;
         }
 
         .content-right {
           width: auto;
+
+          img {
+            width: 340px;
+          }
         }
       }
       .projects {

@@ -3,6 +3,7 @@ import { LogoIcon } from "./assets/svg/LogoIcon";
 import { MenuIcon } from "./assets/svg/MenuIcon";
 import { useRef, useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import me from "./assets/images/me.png";
 import {
   faCss3Alt,
   faFigma,
@@ -118,7 +119,9 @@ function App() {
               <button onClick={scrollToAboutMe}>Read About Me</button>
             </div>
           </div>
-          <div className="content-right"></div>
+          <div className="content-right">
+            <img src={me} />
+          </div>
         </div>
         <div
           ref={projectsRef}
