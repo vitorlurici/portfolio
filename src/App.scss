@@ -349,6 +349,7 @@
   .main-container {
     .content {
       .introduction {
+        padding-top: 140px;
         .content-right {
           img {
             width: 400px;
@@ -434,10 +435,10 @@
         flex-direction: column;
         justify-content: center;
         gap: 80px;
+        padding-top: 200px;
 
         .content-left {
           width: auto;
-          padding-top: 200px;
         }
 
         .content-right {
