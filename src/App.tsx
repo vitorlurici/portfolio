@@ -10,6 +10,7 @@ import {
   faFlutter,
   faHtml5,
   faJava,
+  faJenkins,
   faJira,
   faJs,
   faNode,
@@ -259,7 +260,7 @@ function App() {
                 size="2xl"
               />
               <FontAwesomeIcon
-                icon={faHtml5}
+                icon={faJenkins}
                 style={{ color: "#ffffff" }}
                 size="2xl"
               />

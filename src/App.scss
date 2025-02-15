@@ -116,7 +116,7 @@
     .animated-section {
       opacity: 0;
       transform: translateY(20px);
-      transition: opacity 2s ease, transform 2s ease;
+      transition: opacity 2s ease, transform 1s ease;
 
       &.visible {
         opacity: 1;
@@ -240,8 +240,10 @@
 
         .logos {
           display: flex;
+          flex-wrap: wrap;
           width: 100%;
           justify-content: space-between;
+          gap: 20px;
         }
       }
     }
@@ -349,7 +351,7 @@
   .main-container {
     .content {
       .introduction {
-        padding-top: 140px;
+        padding-top: 160px;
         .content-right {
           img {
             width: 400px;
@@ -432,10 +434,8 @@
     .content {
       padding-inline: 20px;
       .introduction {
-        flex-direction: column;
+        flex-direction: column-reverse;
         justify-content: center;
-        gap: 80px;
-        padding-top: 200px;
 
         .content-left {
           width: auto;
@@ -443,6 +443,7 @@
 
         .content-right {
           width: auto;
+          margin-bottom: -48px;
 
           img {
             width: 340px;
@@ -486,6 +487,20 @@
         .grid {
           .item {
             height: 480px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 360px) {
+  .main-container {
+    .content {
+      .introduction {
+        .content-right {
+          img {
+            width: 280px;
           }
         }
       }
