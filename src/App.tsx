@@ -1,6 +1,5 @@
 import "./App.scss";
 import { LogoIcon } from "./assets/svg/LogoIcon";
-import { MenuIcon } from "./assets/svg/MenuIcon";
 import { useRef, useState, useEffect } from "react";
 import me from "./assets/images/me.png";
 import { HtmlIcon } from "./assets/svg/Htmlcon";
@@ -96,9 +95,16 @@ function App() {
             </div>
           </div>
         </a>
-        <div className="menu">
-          <span>MENU</span>
-          <MenuIcon />
+        <div className="header-right">
+          <a
+            href="https://github.com/user-attachments/files/18648395/Vitor_Lurici_CV.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button>
+              Download CV <DownloadIcon />
+            </button>
+          </a>
         </div>
       </header>
       <div className="content">
@@ -231,15 +237,6 @@ function App() {
               <JiraIcon />
             </div>
           </div>
-          <a
-            href="https://github.com/user-attachments/files/18648395/Vitor_Lurici_CV.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <button>
-              Download CV <DownloadIcon />
-            </button>
-          </a>
         </div>
         <footer>
           <hr />

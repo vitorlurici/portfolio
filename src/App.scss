@@ -7,7 +7,7 @@
   flex-direction: column;
 
   .header-container {
-    padding: 24px 0px 0px 80px;
+    padding: 24px 40px 0px 40px;
     display: flex;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -19,11 +19,14 @@
     z-index: 1;
     position: fixed;
     top: 0;
+    width: 100%;
+    pointer-events: none;
 
     .logo {
       display: flex;
       align-items: center;
       gap: 4px;
+      pointer-events: auto;
 
       &:hover {
         .logo-icon {
@@ -72,36 +75,8 @@
       }
     }
 
-    .menu {
-      display: none;
-      align-items: center;
-      cursor: pointer;
-      gap: 12px;
-
-      &:hover {
-        span {
-          transition: 0.5s;
-          color: #cccccc;
-        }
-        .menu-icon {
-          transition: 0.5s;
-          fill: #cccccc;
-        }
-      }
-
-      span {
-        font-size: 16px;
-        color: #678184;
-        font-weight: bold;
-        transition: 0.5s;
-      }
-
-      .menu-icon {
-        width: 24px;
-        height: 24px;
-        fill: #678184;
-        transition: 0.5s;
-      }
+    .header-right {
+      pointer-events: auto;
     }
   }
 
@@ -342,10 +317,6 @@
 
 @media (max-width: 1500px) {
   .main-container {
-    .header-container {
-      padding: 24px 0px 0px 40px;
-    }
-
     .content {
       padding-inline: 40px;
       max-width: none;
@@ -421,6 +392,12 @@
       width: 100%;
       background-color: rgba(255, 255, 255, 0.8);
 
+      button {
+        &:hover {
+          background-color: #1e1e1e;
+        }
+      }
+
       .logo {
         &:hover {
           .logo-icon {
@@ -488,6 +465,13 @@
 }
 @media (max-width: 500px) {
   .main-container {
+    .header-container {
+      .logo {
+        .logo-text {
+          display: none;
+        }
+      }
+    }
     .content {
       .projects {
         .grid {
