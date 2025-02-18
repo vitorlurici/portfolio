@@ -356,6 +356,15 @@ function App() {
               <ul>
                 <li>
                   <a
+                    href="https://www.linkedin.com/in/vitor-lurici-0911b1303/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Linkedin
+                  </a>
+                </li>
+                <li>
+                  <a
                     href="https://github.com/vitorlurici"
                     target="_blank"
                     rel="noopener noreferrer"
