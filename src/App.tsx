@@ -2,22 +2,25 @@ import "./App.scss";
 import { LogoIcon } from "./assets/svg/LogoIcon";
 import { MenuIcon } from "./assets/svg/MenuIcon";
 import { useRef, useState, useEffect } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import me from "./assets/images/me.png";
-import {
-  faCss3Alt,
-  faFigma,
-  faFlutter,
-  faHtml5,
-  faJava,
-  faJenkins,
-  faJira,
-  faJs,
-  faNode,
-  faPython,
-  faReact,
-  faTrello,
-} from "@fortawesome/free-brands-svg-icons";
+import { HtmlIcon } from "./assets/svg/Htmlcon";
+import { CssIcon } from "./assets/svg/CssIcon";
+import { JsIcon } from "./assets/svg/JsIcon";
+import { TsIcon } from "./assets/svg/TsIcon";
+import { ReactIcon } from "./assets/svg/ReactIcon";
+import { AngularIcon } from "./assets/svg/AngularIcon";
+import { FlutterIcon } from "./assets/svg/FlutterIcon";
+import { JavaIcon } from "./assets/svg/JavaIcon";
+import { PythonIcon } from "./assets/svg/PythonIcon";
+import { DownloadIcon } from "./assets/svg/DownloadIcon";
+import { NodeIcon } from "./assets/svg/NodeIcon";
+import { FirebaseIcon } from "./assets/svg/FirebaseIcon";
+import { MysqlIcon } from "./assets/svg/MysqlIcon";
+import { SqliteIcon } from "./assets/svg/SqliteIcon";
+import { SassIcon } from "./assets/svg/SassIcon";
+import { FigmaIcon } from "./assets/svg/FigmaIcon";
+import { TrelloIcon } from "./assets/svg/TrelloIcon";
+import { JiraIcon } from "./assets/svg/JiraIcon";
 
 function App() {
   const projectsRef = useRef<HTMLDivElement | null>(null);
@@ -209,66 +212,23 @@ function App() {
             <h2>Tech Skills</h2>
 
             <div className="logos">
-              <FontAwesomeIcon
-                icon={faHtml5}
-                style={{ color: "#ffffff" }}
-                size="2xl"
-              />
-              <FontAwesomeIcon
-                icon={faCss3Alt}
-                style={{ color: "#ffffff" }}
-                size="2xl"
-              />
-              <FontAwesomeIcon
-                icon={faJs}
-                style={{ color: "#ffffff" }}
-                size="2xl"
-              />
-              <FontAwesomeIcon
-                icon={faReact}
-                style={{ color: "#ffffff" }}
-                size="2xl"
-              />
-              <FontAwesomeIcon
-                icon={faPython}
-                style={{ color: "#ffffff" }}
-                size="2xl"
-              />
-              <FontAwesomeIcon
-                icon={faJava}
-                style={{ color: "#ffffff" }}
-                size="2xl"
-              />
-              <FontAwesomeIcon
-                icon={faNode}
-                style={{ color: "#ffffff" }}
-                size="2xl"
-              />
-              <FontAwesomeIcon
-                icon={faFlutter}
-                style={{ color: "#ffffff" }}
-                size="2xl"
-              />
-              <FontAwesomeIcon
-                icon={faFigma}
-                style={{ color: "#ffffff" }}
-                size="2xl"
-              />
-              <FontAwesomeIcon
-                icon={faJira}
-                style={{ color: "#ffffff" }}
-                size="2xl"
-              />
-              <FontAwesomeIcon
-                icon={faJenkins}
-                style={{ color: "#ffffff" }}
-                size="2xl"
-              />
-              <FontAwesomeIcon
-                icon={faTrello}
-                style={{ color: "#ffffff" }}
-                size="2xl"
-              />
+              <HtmlIcon />
+              <CssIcon />
+              <SassIcon />
+              <JsIcon />
+              <TsIcon />
+              <ReactIcon />
+              <AngularIcon />
+              <FlutterIcon />
+              <JavaIcon />
+              <PythonIcon />
+              <NodeIcon />
+              <MysqlIcon />
+              <SqliteIcon />
+              <FirebaseIcon />
+              <FigmaIcon />
+              <TrelloIcon />
+              <JiraIcon />
             </div>
           </div>
           <a
@@ -276,7 +236,9 @@ function App() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <button>Download my CV</button>
+            <button>
+              Download CV <DownloadIcon />
+            </button>
           </a>
         </div>
         <footer>
