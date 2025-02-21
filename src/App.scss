@@ -20,8 +20,10 @@
     align-items: center;
     z-index: 1000;
     transition: transform 1s ease-in-out;
+    overflow-y: scroll;
 
     &.slide-up {
+      overflow-y: initial;
       transform: translateY(-100%);
     }
 
