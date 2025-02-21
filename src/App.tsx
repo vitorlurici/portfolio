@@ -1,8 +1,8 @@
+import { useState, useEffect, useRef } from "react";
 import "./App.scss";
 import { LogoIcon } from "./assets/svg/LogoIcon";
-import { useRef, useState, useEffect } from "react";
 import me from "./assets/images/me.png";
-import { HtmlIcon } from "./assets/svg/Htmlcon";
+import { HtmlIcon } from "./assets/svg/HtmlIcon";
 import { CssIcon } from "./assets/svg/CssIcon";
 import { JsIcon } from "./assets/svg/JsIcon";
 import { TsIcon } from "./assets/svg/TsIcon";
@@ -29,6 +29,8 @@ function App() {
     new Set()
   );
   const [showScrollUp, setShowScrollUp] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const [isLoadingComplete, setIsLoadingComplete] = useState(false);
 
   const scrollToProjects = () => {
     if (projectsRef.current) {
@@ -83,8 +85,42 @@ function App() {
     };
   }, []);
 
+  useEffect(() => {
+    const handleLoad = () =>
+      setTimeout(() => {
+        setIsLoadingComplete(true);
+        setTimeout(() => {
+          setIsLoading(false);
+        }, 1000);
+      }, 1000);
+
+    window.onload = handleLoad;
+
+    if (document.readyState === "complete") {
+      handleLoad();
+    }
+
+    return () => {
+      window.onload = null;
+    };
+  }, []);
+
   return (
     <main className="main-container">
+      {isLoading && (
+        <div
+          className={`loading-screen ${isLoadingComplete ? "slide-up" : ""}`}
+        >
+          <div className="logo-container">
+            <LogoIcon />
+            <div className="loading-spinner"></div>
+          </div>
+          <div className="bottom">
+            <p>WELCOME</p>
+            <h1>Wait a bit</h1>
+          </div>
+        </div>
+      )}
       <header className="header-container">
         <a href="/portfolio">
           <div className="logo">
@@ -107,7 +143,7 @@ function App() {
           </a>
         </div>
       </header>
-      <div className="content">
+      <div className={`content ${!isLoadingComplete ? "hidden" : ""}`}>
         <div
           ref={introductionRef}
           id="introduction"
@@ -216,7 +252,6 @@ function App() {
           </h3>
           <div className="skills">
             <h2>Tech Skills</h2>
-
             <div className="logos">
               <HtmlIcon />
               <CssIcon />
@@ -303,7 +338,7 @@ function App() {
               </ul>
             </div>
             <div className="footer-column">
-              <h4>— Availabity</h4>
+              <h4>— Availability</h4>
               <p>
                 I am currently available and eager to explore exciting job
                 opportunities that align with my skills and experience. Let’s
