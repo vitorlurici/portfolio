@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { LogoIcon } from "../../assets/svg/LogoIcon";
 import { useLanguage } from "../../hooks/useLanguage";
 import { translations } from "../../translations/home/translations";
@@ -24,23 +25,23 @@ export const Footer = ({ resetApp }: FooterProps) => {
           <ul>
             <li>
               Email:{" "}
-              <a
-                href="mailto:vitorluricii@hotmail.com"
+              <Link
+                to="mailto:vitorluricii@hotmail.com"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 vitorluricii@hotmail.com
-              </a>
+              </Link>
             </li>
             <li>
               {translations[language].footerPhone}{" "}
-              <a
-                href="https://wa.me/5514996825293"
+              <Link
+                to="https://wa.me/5514996825293"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 +55 14 99682-5293
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -49,33 +50,33 @@ export const Footer = ({ resetApp }: FooterProps) => {
           <ul>
             <li>
               {" "}
-              <a
-                href="https://github.com/GabrielRogerioMessias/project-integrator-VI-vet-link"
+              <Link
+                to="https://github.com/GabrielRogerioMessias/project-integrator-VI-vet-link"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 Vetlink{" "}
-              </a>
+              </Link>
             </li>
             <li>
               {" "}
-              <a
-                href="https://github.com/vitorlurici/cosmos"
+              <Link
+                to="https://github.com/vitorlurici/cosmos"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 Cosmos
-              </a>
+              </Link>
             </li>
             <li>
               {" "}
-              <a
-                href="https://github.com/vitorlurici/finance-project"
+              <Link
+                to="https://github.com/vitorlurici/finance-project"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 Finance
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -87,31 +88,31 @@ export const Footer = ({ resetApp }: FooterProps) => {
           <h4>{translations[language].followMe}</h4>
           <ul>
             <li>
-              <a
-                href="https://www.linkedin.com/in/vitor-lurici-0911b1303/"
+              <Link
+                to="https://www.linkedin.com/in/vitor-lurici-0911b1303/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 Linkedin
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="https://github.com/vitorlurici"
+              <Link
+                to="https://github.com/vitorlurici"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 GitHub
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="https://www.instagram.com/vitorlmoraes/"
+              <Link
+                to="https://www.instagram.com/vitorlmoraes/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 Instagram
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

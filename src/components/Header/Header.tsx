@@ -2,7 +2,7 @@ import { LogoIcon } from "../../assets/svg/LogoIcon";
 import { DownloadIcon } from "../../assets/svg/DownloadIcon";
 import { LanguageSelector } from "../LanguageSelector/LanguageSelector";
 import { useLanguage } from "../../hooks/useLanguage";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { translations } from "../../translations/home/translations";
 import "./Header.scss";
 
@@ -44,15 +44,15 @@ export const Header = ({ resetApp }: HeaderProps) => {
           language={language}
           setLanguage={handleLanguageChange}
         />
-        <a
-          href="https://github.com/user-attachments/files/18648395/Vitor_Lurici_CV.pdf"
+        <Link
+          to="https://github.com/user-attachments/files/18648395/Vitor_Lurici_CV.pdf"
           target="_blank"
           rel="noopener noreferrer"
         >
           <button>
             {translations[language].downloadCV} <DownloadIcon />
           </button>
-        </a>
+        </Link>
       </div>
     </header>
   );

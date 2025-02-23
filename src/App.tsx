@@ -176,8 +176,8 @@ function App() {
                 <p className="view-git">{translations[language].viewGithub}</p>
               </div>
             </Link>
-            <a
-              href="https://github.com/vitorlurici/cosmos"
+            <Link
+              to="https://github.com/vitorlurici/cosmos"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -187,9 +187,9 @@ function App() {
                 <p>{translations[language].cosmosDescription}</p>
                 <p className="view-git">{translations[language].viewGithub}</p>
               </div>
-            </a>
-            <a
-              href="https://github.com/vitorlurici/finance-project"
+            </Link>
+            <Link
+              to="https://github.com/vitorlurici/finance-project"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -199,7 +199,7 @@ function App() {
                 <p>{translations[language].financeDescription}</p>
                 <p className="view-git">{translations[language].viewGithub}</p>
               </div>
-            </a>
+            </Link>
           </div>
         </div>
         <div
