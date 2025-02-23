@@ -10,7 +10,9 @@
       const hash = window.location.hash;
 
       window.location.replace(
-        `${window.location.origin}/index.html#${encodeURIComponent(
+        `${
+          window.location.origin
+        }/portfolio/index.html?route=${encodeURIComponent(
           path + search + hash
         )}`
       );
