@@ -34,14 +34,12 @@
       svg {
         width: 16px;
         height: 16px;
-        transition: transform 0.5s ease; // Adiciona transição ao ícone
+        transition: transform 0.5s ease;
       }
 
       &.rotate {
         svg {
-          transform: rotate(
-            180deg
-          ); // Gira a seta 180° quando a classe rotate está ativa
+          transform: rotate(180deg);
         }
       }
     }

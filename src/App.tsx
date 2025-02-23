@@ -2,34 +2,35 @@ import { useState, useEffect, useRef } from "react";
 import "./App.scss";
 import { LogoIcon } from "./assets/svg/LogoIcon";
 import me from "./assets/images/me.png";
-import { HtmlIcon } from "./assets/svg/HtmlIcon";
-import { CssIcon } from "./assets/svg/CssIcon";
-import { JsIcon } from "./assets/svg/JsIcon";
-import { TsIcon } from "./assets/svg/TsIcon";
-import { ReactIcon } from "./assets/svg/ReactIcon";
-import { AngularIcon } from "./assets/svg/AngularIcon";
-import { FlutterIcon } from "./assets/svg/FlutterIcon";
-import { JavaIcon } from "./assets/svg/JavaIcon";
-import { PythonIcon } from "./assets/svg/PythonIcon";
-import { NodeIcon } from "./assets/svg/NodeIcon";
-import { FirebaseIcon } from "./assets/svg/FirebaseIcon";
-import { MysqlIcon } from "./assets/svg/MysqlIcon";
-import { SqliteIcon } from "./assets/svg/SqliteIcon";
-import { SassIcon } from "./assets/svg/SassIcon";
-import { FigmaIcon } from "./assets/svg/FigmaIcon";
-import { TrelloIcon } from "./assets/svg/TrelloIcon";
-import { JiraIcon } from "./assets/svg/JiraIcon";
+import {
+  HtmlIcon,
+  CssIcon,
+  SassIcon,
+  JsIcon,
+  TsIcon,
+  ReactIcon,
+  AngularIcon,
+  FlutterIcon,
+  JavaIcon,
+  PythonIcon,
+  NodeIcon,
+  MysqlIcon,
+  SqliteIcon,
+  FirebaseIcon,
+  FigmaIcon,
+  TrelloIcon,
+  JiraIcon,
+} from "./assets/svg";
 import { Header } from "./components/Header/Header";
 import { Footer } from "./components/Footer/Footer";
+import { ScrollUp } from "./components/ScrollUpButton/ScrollUp";
 
 function App() {
   const projectsRef = useRef<HTMLDivElement | null>(null);
   const aboutMeRef = useRef<HTMLDivElement | null>(null);
-  const introductionRef = useRef<HTMLDivElement | null>(null);
   const [visibleSections, setVisibleSections] = useState<Set<string>>(
     new Set()
   );
-  const [showScrollUp, setShowScrollUp] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [isLoadingComplete, setIsLoadingComplete] = useState(false);
 
@@ -43,10 +44,6 @@ function App() {
     if (aboutMeRef.current) {
       aboutMeRef.current.scrollIntoView({ behavior: "smooth" });
     }
-  };
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   useEffect(() => {
@@ -66,23 +63,6 @@ function App() {
 
     return () => {
       sections.forEach((section) => observer.unobserve(section));
-    };
-  }, []);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (introductionRef.current) {
-        const introductionHeight = introductionRef.current.offsetHeight;
-        const triggerHeight = introductionHeight * 0.5;
-        const scrollPosition = window.scrollY;
-
-        setShowScrollUp(scrollPosition > triggerHeight);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -125,7 +105,6 @@ function App() {
       <Header />
       <div className={`content ${!isLoadingComplete ? "hidden" : ""}`}>
         <div
-          ref={introductionRef}
           id="introduction"
           className={`animated-section introduction ${
             visibleSections.has("introduction") ? "visible" : ""
@@ -255,12 +234,7 @@ function App() {
         </div>
         <Footer />
       </div>
-      <button
-        className={`scroll-up ${showScrollUp ? "visible" : "hidden"}`}
-        onClick={scrollToTop}
-      >
-        ↑
-      </button>
+      <ScrollUp />
     </main>
   );
 }

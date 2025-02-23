@@ -15,7 +15,7 @@ export const LanguageSelector = ({
 
   const handleLanguageChange = (lang: "en" | "pt-br") => {
     setLanguage(lang);
-    setIsOpen(false); // Fecha o dropdown após selecionar um idioma
+    setIsOpen(false);
   };
 
   const brFlag = "/portfolio/flags/br-flag.jpeg";
