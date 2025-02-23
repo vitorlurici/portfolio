@@ -5,17 +5,20 @@ import { ArrowDownIcon } from "../../assets/svg/ArrowDownIcon";
 interface LanguageSelectorProps {
   language: "en" | "pt-br";
   setLanguage: (language: "en" | "pt-br") => void;
+  resetApp: () => void;
 }
 
 export const LanguageSelector = ({
   language,
   setLanguage,
+  resetApp,
 }: LanguageSelectorProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleLanguageChange = (lang: "en" | "pt-br") => {
     setLanguage(lang);
     setIsOpen(false);
+    resetApp();
   };
 
   const brFlag = "/portfolio/flags/br-flag.jpeg";

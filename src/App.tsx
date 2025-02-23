@@ -121,8 +121,8 @@ function App() {
             <div className="loading-spinner"></div>
           </div>
           <div className="bottom">
-            <p>WELCOME</p>
-            <h1>Wait a bit</h1>
+            <p>{translations[language].welcome}</p>
+            <h1>{translations[language].wait}</h1>
           </div>
         </div>
       )}
@@ -136,12 +136,16 @@ function App() {
         >
           <div className="content-left">
             <span>VITOR LURICI</span>
-            <h1>Software Engineer</h1>
+            <h1>{translations[language].role}</h1>
             <h3>{translations[language].introduction}</h3>
             <div className="main-links">
-              <button onClick={scrollToProjects}>View Projects</button>
-              <p>or</p>
-              <button onClick={scrollToAboutMe}>Read About Me</button>
+              <button onClick={scrollToProjects}>
+                {translations[language].viewProjects}
+              </button>
+              <p>{translations[language].or}</p>
+              <button onClick={scrollToAboutMe}>
+                {translations[language].readAboutMe}
+              </button>
             </div>
           </div>
           <div className="content-right">
@@ -156,8 +160,8 @@ function App() {
           }`}
         >
           <div className="title">
-            <span>ACADEMIC & PERSONAL</span>
-            <h1>Projects</h1>
+            <span>{translations[language].projectsSubTitle}</span>
+            <h1>{translations[language].projectsTitle}</h1>
           </div>
           <div className="grid">
             <Link
@@ -168,12 +172,8 @@ function App() {
               <div className="item vetlink">
                 <p>2024</p>
                 <h2>VETLINK</h2>
-                <p>
-                  A mobile app designed for veterinary students and
-                  professionals, offering detailed information on various
-                  zoonoses and enabling personal note-taking.
-                </p>
-                <p className="view-git">View Project on GitHub →</p>
+                <p>{translations[language].vetlinkDescription}</p>
+                <p className="view-git">{translations[language].viewGithub}</p>
               </div>
             </Link>
             <a
@@ -184,11 +184,8 @@ function App() {
               <div className="item cosmos">
                 <p>2024</p>
                 <h2>COSMOS</h2>
-                <p>
-                  A captivating space exploration Website utilizing NASA APIs,
-                  Google Translate, and Spaceflight News API.
-                </p>
-                <p className="view-git">View Project on GitHub →</p>
+                <p>{translations[language].cosmosDescription}</p>
+                <p className="view-git">{translations[language].viewGithub}</p>
               </div>
             </a>
             <a
@@ -197,14 +194,10 @@ function App() {
               rel="noopener noreferrer"
             >
               <div className="item finance">
-                <p>2023 - In Progress</p>
+                <p>2023 - {translations[language].inProgress}</p>
                 <h2>FINANCE</h2>
-                <p>
-                  A personal finance management application currently under
-                  development. It enables users to track and manage their income
-                  and expenses efficiently.
-                </p>
-                <p className="view-git">View Project on GitHub →</p>
+                <p>{translations[language].financeDescription}</p>
+                <p className="view-git">{translations[language].viewGithub}</p>
               </div>
             </a>
           </div>
@@ -217,20 +210,12 @@ function App() {
           }`}
         >
           <div className="title">
-            <span>A FEW WORDS</span>
-            <h1>About Me</h1>
+            <span>{translations[language].aboutMeSubTitle}</span>
+            <h1>{translations[language].aboutMeTitle}</h1>
           </div>
-          <h3>
-            I'm Vitor Lurici, an aspiring Software Engineer with a solid
-            foundation in software development and a proven ability to
-            collaborate effectively in team environments. Currently pursuing a
-            degree in Software Engineering, I have gained hands-on experience
-            through personal and academic projects, demonstrating a passion for
-            innovation and problem-solving. In my spare time I enjoy traveling
-            and playing video games.
-          </h3>
+          <h3>{translations[language].aboutMeDescription}</h3>
           <div className="skills">
-            <h2>Tech Skills</h2>
+            <h2>{translations[language].techSkills}</h2>
             <div className="logos">
               <HtmlIcon />
               <CssIcon />

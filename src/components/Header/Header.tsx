@@ -40,6 +40,7 @@ export const Header = ({ resetApp }: HeaderProps) => {
       </div>
       <div className="header-right">
         <LanguageSelector
+          resetApp={resetApp}
           language={language}
           setLanguage={handleLanguageChange}
         />
