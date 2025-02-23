@@ -6,10 +6,10 @@ import App from "./App.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <Router>
+    <Router basename="/portfolio">
       <Routes>
-        <Route path="/portfolio" element={<App />} />
-        <Route path="/portfolio/pt" element={<App />} />
+        <Route path="/" element={<App />} />
+        <Route path="/pt" element={<App />} />
       </Routes>
     </Router>
   </StrictMode>

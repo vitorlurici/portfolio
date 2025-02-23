@@ -17,9 +17,9 @@ export const Header = ({ resetApp }: HeaderProps) => {
   const handleLanguageChange = (lang: "en" | "pt-br") => {
     setLanguage(lang);
     if (lang === "pt-br") {
-      navigate("/portfolio/pt");
+      navigate("/pt");
     } else {
-      navigate("/portfolio");
+      navigate("/");
     }
   };
 
