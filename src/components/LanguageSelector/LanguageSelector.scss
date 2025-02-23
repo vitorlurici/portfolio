@@ -7,14 +7,14 @@
   .selected-language {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 8px;
 
     .flag-container {
       width: 40px;
       height: 40px;
       border-radius: 50%;
       overflow: hidden;
-      border: 2px solid #fff;
+      border: 2px solid #678184;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -28,13 +28,16 @@
 
     .arrow {
       font-size: 12px;
-      color: #fff;
       transition: transform 0.5s ease;
 
       svg {
         width: 16px;
         height: 16px;
         transition: transform 0.5s ease;
+
+        g {
+          fill: #678184;
+        }
       }
 
       &.rotate {
@@ -48,8 +51,7 @@
   .dropdown {
     position: absolute;
     top: 60px;
-    background-color: #fff;
-    border: 2px solid #fff;
+    border: 2px solid #678184;
     border-radius: 50%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     z-index: 10;
