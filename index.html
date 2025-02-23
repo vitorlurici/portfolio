@@ -11,12 +11,11 @@
   <body>
     <div id="root"></div>
     <script>
-      const hash = window.location.hash;
+      const urlParams = new URLSearchParams(window.location.search);
+      const route = urlParams.get("route");
 
-      if (hash) {
-        const redirect = decodeURIComponent(hash.slice(1));
-
-        window.history.replaceState(null, "", redirect);
+      if (route) {
+        window.history.replaceState(null, "", route);
       }
     </script>
   </body>
