@@ -1,17 +1,29 @@
 import { LogoIcon } from "../../assets/svg/LogoIcon";
+import { useLanguage } from "../../hooks/useLanguage";
+import { translations } from "../../translations/home/translations";
 import "./Footer.scss";
 
-export const Footer = () => {
+interface FooterProps {
+  resetApp: () => void;
+}
+
+export const Footer = ({ resetApp }: FooterProps) => {
+  const { language } = useLanguage();
+
+  const handleLogoClick = () => {
+    resetApp();
+  };
+
   return (
     <footer>
       <hr />
       <div className="footer-content">
         <div className="footer-column">
-          <h4>— Contact information</h4>
-          <p>Feel free to contact me anytime.</p>
+          <h4>{translations[language].footerContact}</h4>
+          <p>{translations[language].feelFree}</p>
           <ul>
             <li>
-              E:{" "}
+              Email:{" "}
               <a
                 href="mailto:vitorluricii@hotmail.com"
                 target="_blank"
@@ -21,7 +33,7 @@ export const Footer = () => {
               </a>
             </li>
             <li>
-              P:{" "}
+              {translations[language].footerPhone}{" "}
               <a
                 href="https://wa.me/5514996825293"
                 target="_blank"
@@ -33,7 +45,7 @@ export const Footer = () => {
           </ul>
         </div>
         <div className="footer-column">
-          <h4>— Latest projects</h4>
+          <h4>{translations[language].footerProjects}</h4>
           <ul>
             <li>
               {" "}
@@ -68,15 +80,11 @@ export const Footer = () => {
           </ul>
         </div>
         <div className="footer-column">
-          <h4>— Availability</h4>
-          <p>
-            I am currently available and eager to explore exciting job
-            opportunities that align with my skills and experience. Let’s
-            connect!
-          </p>
+          <h4>{translations[language].footerAvailability}</h4>
+          <p>{translations[language].availabilityText}</p>
         </div>
         <div className="footer-column">
-          <h4>— Follow me on</h4>
+          <h4>{translations[language].followMe}</h4>
           <ul>
             <li>
               <a
@@ -108,9 +116,9 @@ export const Footer = () => {
           </ul>
         </div>
         <div className="copyright">
-          <a href="/portfolio">
+          <div className="logo" onClick={handleLogoClick}>
             <LogoIcon />
-          </a>
+          </div>
           <p className="copyright-text">
             © {new Date().getFullYear()} Vitor Lurici.
           </p>

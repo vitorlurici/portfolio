@@ -24,11 +24,9 @@ import {
 import { Header } from "./components/Header/Header";
 import { Footer } from "./components/Footer/Footer";
 import { ScrollUp } from "./components/ScrollUpButton/ScrollUp";
-import { Link } from "react-router-dom";
 import { translations } from "./translations/home/translations";
-import { useLanguage } from "./hooks/useLanguage";
 
-function App() {
+function AppPT() {
   const projectsRef = useRef<HTMLDivElement | null>(null);
   const aboutMeRef = useRef<HTMLDivElement | null>(null);
   const [visibleSections, setVisibleSections] = useState<Set<string>>(
@@ -36,8 +34,6 @@ function App() {
   );
   const [isLoading, setIsLoading] = useState(true);
   const [isLoadingComplete, setIsLoadingComplete] = useState(false);
-
-  const { language } = useLanguage();
 
   const scrollToProjects = () => {
     if (projectsRef.current) {
@@ -121,8 +117,8 @@ function App() {
             <div className="loading-spinner"></div>
           </div>
           <div className="bottom">
-            <p>WELCOME</p>
-            <h1>Wait a bit</h1>
+            <p>{translations["pt-br"].welcome}</p>
+            <h1>{translations["pt-br"].wait}</h1>
           </div>
         </div>
       )}
@@ -137,11 +133,15 @@ function App() {
           <div className="content-left">
             <span>VITOR LURICI</span>
             <h1>Software Engineer</h1>
-            <h3>{translations[language].introduction}</h3>
+            <h3>{translations["pt-br"].introduction}</h3>
             <div className="main-links">
-              <button onClick={scrollToProjects}>View Projects</button>
-              <p>or</p>
-              <button onClick={scrollToAboutMe}>Read About Me</button>
+              <button onClick={scrollToProjects}>
+                {translations["pt-br"].viewProjects}
+              </button>
+              <p>ou</p>
+              <button onClick={scrollToAboutMe}>
+                {translations["pt-br"].readAboutMe}
+              </button>
             </div>
           </div>
           <div className="content-right">
@@ -156,12 +156,12 @@ function App() {
           }`}
         >
           <div className="title">
-            <span>ACADEMIC & PERSONAL</span>
-            <h1>Projects</h1>
+            <span>ACADÊMICO & PESSOAL</span>
+            <h1>Projetos</h1>
           </div>
           <div className="grid">
-            <Link
-              to="https://github.com/GabrielRogerioMessias/project-integrator-VI-vet-link"
+            <a
+              href="https://github.com/GabrielRogerioMessias/project-integrator-VI-vet-link"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -169,13 +169,13 @@ function App() {
                 <p>2024</p>
                 <h2>VETLINK</h2>
                 <p>
-                  A mobile app designed for veterinary students and
-                  professionals, offering detailed information on various
-                  zoonoses and enabling personal note-taking.
+                  Um aplicativo móvel projetado para estudantes e profissionais
+                  de veterinária, oferecendo informações detalhadas sobre várias
+                  zoonoses e permitindo a tomada de notas pessoais.
                 </p>
-                <p className="view-git">View Project on GitHub →</p>
+                <p className="view-git">Ver Projeto no GitHub →</p>
               </div>
-            </Link>
+            </a>
             <a
               href="https://github.com/vitorlurici/cosmos"
               target="_blank"
@@ -185,10 +185,10 @@ function App() {
                 <p>2024</p>
                 <h2>COSMOS</h2>
                 <p>
-                  A captivating space exploration Website utilizing NASA APIs,
-                  Google Translate, and Spaceflight News API.
+                  Um site cativante de exploração espacial utilizando APIs da
+                  NASA, Google Translate e Spaceflight News API.
                 </p>
-                <p className="view-git">View Project on GitHub →</p>
+                <p className="view-git">Ver Projeto no GitHub →</p>
               </div>
             </a>
             <a
@@ -197,14 +197,14 @@ function App() {
               rel="noopener noreferrer"
             >
               <div className="item finance">
-                <p>2023 - In Progress</p>
-                <h2>FINANCE</h2>
+                <p>2023 - Em Progresso</p>
+                <h2>FINANÇAS</h2>
                 <p>
-                  A personal finance management application currently under
-                  development. It enables users to track and manage their income
-                  and expenses efficiently.
+                  Um aplicativo de gerenciamento de finanças pessoais atualmente
+                  em desenvolvimento. Ele permite que os usuários acompanhem e
+                  gerenciem suas receitas e despesas de forma eficiente.
                 </p>
-                <p className="view-git">View Project on GitHub →</p>
+                <p className="view-git">Ver Projeto no GitHub →</p>
               </div>
             </a>
           </div>
@@ -217,20 +217,12 @@ function App() {
           }`}
         >
           <div className="title">
-            <span>A FEW WORDS</span>
-            <h1>About Me</h1>
+            <span>ALGUMAS PALAVRAS</span>
+            <h1>Sobre Mim</h1>
           </div>
-          <h3>
-            I'm Vitor Lurici, an aspiring Software Engineer with a solid
-            foundation in software development and a proven ability to
-            collaborate effectively in team environments. Currently pursuing a
-            degree in Software Engineering, I have gained hands-on experience
-            through personal and academic projects, demonstrating a passion for
-            innovation and problem-solving. In my spare time I enjoy traveling
-            and playing video games.
-          </h3>
+          <h3>{translations["pt-br"].aboutMe}</h3>
           <div className="skills">
-            <h2>Tech Skills</h2>
+            <h2>{translations["pt-br"].techSkills}</h2>
             <div className="logos">
               <HtmlIcon />
               <CssIcon />
@@ -259,4 +251,4 @@ function App() {
   );
 }
 
-export default App;
+export default AppPT;

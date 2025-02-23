@@ -15,7 +15,13 @@ export const translations = {
     availability: "Availability",
     availabilityText:
       "I am currently available and eager to explore exciting job opportunities that align with my skills and experience. Let’s connect!",
-    followMe: "Follow me on",
+    followMe: "— Follow me on",
+    headerDescription: "SOFTWARE ENGINEER",
+    downloadCV: "Download CV",
+    footerContact: "— Contact information",
+    footerProjects: "— Latest projects",
+    footerAvailability: "— Availability",
+    footerPhone: "Phone:",
   },
   "pt-br": {
     welcome: "BEM-VINDO",
@@ -34,6 +40,12 @@ export const translations = {
     availability: "Disponibilidade",
     availabilityText:
       "Estou atualmente disponível e ansioso para explorar oportunidades de trabalho emocionantes que se alinhem com minhas habilidades e experiência. Vamos nos conectar!",
-    followMe: "Me siga em",
+    followMe: "— Me siga em",
+    headerDescription: "ENGENHEIRO DE SOFTWARE",
+    downloadCV: "Baixar CV",
+    footerContact: "— Contatos",
+    footerProjects: "— Últimos projetos",
+    footerAvailability: "— Disponibilidade",
+    footerPhone: "Telefone:",
   },
 };
