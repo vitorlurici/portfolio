@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { projects } from "./projectsData";
 import { useLanguage } from "../../hooks/useLanguage";
+import "./Project.scss";
 
 const ProjectDetails = () => {
   const { id } = useParams<{ id: string }>();
@@ -13,10 +14,24 @@ const ProjectDetails = () => {
   }
 
   return (
-    <div className="project-details">
-      <h1>{project.title}</h1>
-      <p>{project.year}</p>
-      <p>{project.getDescription(language)}</p>
+    <div className="project-main">
+      <div className="top-container">
+        <div className="left-content">
+          <p>{project.getCaseStudy(language)}</p>
+          <h1>{project.title}</h1>
+          <p>{project.year}</p>
+          <a
+            href={project.githubLink}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {project.getViewGithubText(language)}
+          </a>
+        </div>
+        <div className="right-content">
+          <p>{project.getDescription(language)}</p>
+        </div>
+      </div>
 
       <h2>Technologies used:</h2>
       <ul>
@@ -24,10 +39,6 @@ const ProjectDetails = () => {
           <li key={index}>{tech}</li>
         ))}
       </ul>
-
-      <a href={project.githubLink} target="_blank" rel="noopener noreferrer">
-        {project.getViewGithubText(language)}
-      </a>
 
       <div className="project-images">
         {project.images.map((img, index) => (

@@ -1,0 +1,28 @@
+.project-main {
+  padding-top: 160px;
+  display: flex;
+  flex-direction: column;
+  max-width: 1360px;
+  align-self: center;
+  padding-bottom: 120px;
+  gap: 120px;
+
+  p {
+    letter-spacing: 4px;
+  }
+
+  .top-container {
+    display: flex;
+
+    .left-content {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 50%;
+    }
+
+    .right-content {
+      width: 50%;
+    }
+  }
+}

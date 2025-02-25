@@ -1,5 +1,6 @@
 export const translations = {
   en: {
+    caseStudy: "CASE STUDY",
     viewGithub: "View Project on GitHub →",
     vetlinkDescription:
       "A mobile app designed for veterinary students and professionals, offering detailed information on various zoonoses and enabling personal note-taking.",
@@ -10,6 +11,7 @@ export const translations = {
     inProgress: "In Progress",
   },
   "pt-br": {
+    caseStudy: "ESTUDO DE CASO",
     viewGithub: "Acessar projeto no GitHub →",
     vetlinkDescription:
       "App mobile designado para estudantes e profissionais de medicina veterinária, oferecendo informações detalhadas em zoonoses selecionadas e permitindo anotações pessoais.",

@@ -9,7 +9,7 @@ export const translations = {
     projectsSubTitle: "ACADEMIC & PERSONAL",
     projectsTitle: "Projects",
     inProgress: "In Progress",
-    viewGithub: "View Project on GitHub →",
+    viewGithub: "View Case Study →",
     vetlinkDescription:
       "A mobile app designed for veterinary students and professionals, offering detailed information on various zoonoses and enabling personal note-taking.",
     cosmosDescription:
@@ -32,7 +32,7 @@ export const translations = {
     projectsSubTitle: "ACADÊMICOS & PESSOAIS",
     projectsTitle: "Projetos",
     inProgress: "Em progresso",
-    viewGithub: "Acessar projeto no GitHub →",
+    viewGithub: "Ver Estudo de Caso →",
     vetlinkDescription:
       "App mobile designado para estudantes e profissionais de medicina veterinária, oferecendo informações detalhadas em zoonoses selecionadas e permitindo anotações pessoais.",
     cosmosDescription:
