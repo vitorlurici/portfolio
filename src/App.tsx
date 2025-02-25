@@ -4,7 +4,7 @@ import { LogoIcon } from "./assets/svg/LogoIcon";
 import { Header } from "./components/Header/Header";
 import { Footer } from "./components/Footer/Footer";
 import { ScrollUp } from "./components/ScrollUpButton/ScrollUp";
-import { translations } from "./translations/home/translations";
+import { translations } from "./translations//loading/translations";
 import { useLanguage } from "./hooks/useLanguage";
 import { Outlet } from "react-router-dom";
 
@@ -54,7 +54,7 @@ function App() {
         >
           <div className="logo-container">
             <LogoIcon />
-            <div className="loading-spinner"></div>
+            <div className="loading-spinner" />
           </div>
           <div className="bottom">
             <p>{translations[language].welcome}</p>

@@ -1,7 +1,5 @@
 export const translations = {
   en: {
-    welcome: "WELCOME",
-    wait: "Wait a bit",
     role: "Software Engineer",
     introduction:
       "During my three years as a software engineering student, I honed strong critical and analytical skills, consistently delivering high-quality results in deadline-driven projects.",
@@ -23,21 +21,8 @@ export const translations = {
     aboutMeDescription:
       "I'm Vitor Lurici, an aspiring Software Engineer with a solid foundation in software development and a proven ability to collaborate effectively in team environments. Currently pursuing a degree in Software Engineering, I have gained hands-on experience through personal and academic projects, demonstrating a passion for innovation and problem-solving. In my spare time I enjoy traveling and playing video games.",
     techSkills: "Tech Skills",
-    contactInfo: "Contact information",
-    feelFree: "Feel free to contact me anytime.",
-    availabilityText:
-      "I am currently available and eager to explore exciting job opportunities that align with my skills and experience. Let’s connect!",
-    followMe: "— Follow me on",
-    headerDescription: "SOFTWARE ENGINEER",
-    downloadCV: "Download CV",
-    footerContact: "— Contact information",
-    footerProjects: "— Latest projects",
-    footerAvailability: "— Availability",
-    footerPhone: "Phone:",
   },
   "pt-br": {
-    welcome: "BEM-VINDO",
-    wait: "Aguarde um pouco",
     role: "Engenheiro de Software",
     introduction:
       "Durante meus três anos como estudante de engenharia de software, desenvolvi fortes habilidades críticas e analíticas, entregando consistentemente resultados de alta qualidade em projetos com prazos limitados.",
@@ -59,17 +44,5 @@ export const translations = {
     aboutMeDescription:
       "Eu sou Vitor Lurici, um aspirante a Engenheiro de Software com uma base sólida em desenvolvimento de software e uma capacidade comprovada de colaborar efetivamente em ambientes de equipe. Atualmente cursando Engenharia de Software, adquiri experiência prática através de projetos pessoais e acadêmicos, demonstrando paixão por inovação e resolução de problemas. No meu tempo livre, gosto de viajar e jogar videogames.",
     techSkills: "Habilidades",
-    contactInfo: "Informações de contato",
-    feelFree:
-      "Sinta-se à vontade para entrar em contato comigo a qualquer momento.",
-    availabilityText:
-      "Estou atualmente disponível e determinado para explorar oportunidades de trabalho empolgantes que se alinhem com minhas habilidades e experiência. Vamos nos conhecer!",
-    followMe: "— Me siga em",
-    headerDescription: "ENGENHEIRO DE SOFTWARE",
-    downloadCV: "Baixar CV",
-    footerContact: "— Contatos",
-    footerProjects: "— Últimos projetos",
-    footerAvailability: "— Disponibilidade",
-    footerPhone: "Telefone:",
   },
 };

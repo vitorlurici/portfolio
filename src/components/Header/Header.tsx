@@ -3,7 +3,7 @@ import { DownloadIcon } from "../../assets/svg/DownloadIcon";
 import { LanguageSelector } from "../LanguageSelector/LanguageSelector";
 import { useLanguage } from "../../hooks/useLanguage";
 import { Link, useNavigate } from "react-router-dom";
-import { translations } from "../../translations/home/translations";
+import { translations } from "../../translations/header/translations";
 import "./Header.scss";
 
 interface HeaderProps {
@@ -24,7 +24,13 @@ export const Header = ({ resetApp }: HeaderProps) => {
   };
 
   const handleLogoClick = () => {
-    resetApp();
+    if (location.pathname.startsWith("/portfolio/pt")) {
+      navigate("/pt");
+      resetApp();
+    } else {
+      navigate("/");
+      resetApp();
+    }
   };
 
   return (
