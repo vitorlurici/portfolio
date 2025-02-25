@@ -2,284 +2,87 @@
   margin: 0 auto;
 }
 
-.main-container {
+.loading-screen {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #678184;
+  background: linear-gradient(#678184, #1e1e1e);
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  transition: transform 1s ease-in-out;
+  overflow-y: scroll;
 
-  .loading-screen {
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+  &.slide-up {
+    overflow-y: initial;
+    transform: translateY(-100%);
+  }
+
+  .logo-container {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    position: absolute;
+
+    .logo-icon {
+      width: 100%;
+      height: 100%;
+      fill: #fff;
+    }
+    .loading-spinner {
+      display: flex;
+      position: absolute;
+      border: 4px solid #f3f3f3;
+      border-top: 4px solid #678184;
+      border-radius: 50%;
+      width: 56px;
+      height: 56px;
+      animation: spin 1s linear infinite;
+    }
+  }
+
+  .bottom {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      "Helvetica Neue", Arial, sans-serif;
+    display: flex;
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #678184;
-    background: linear-gradient(#678184, #1e1e1e);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    transition: transform 1s ease-in-out;
-    overflow-y: scroll;
-
-    &.slide-up {
-      overflow-y: initial;
-      transform: translateY(-100%);
-    }
-
-    .logo-container {
-      width: 56px;
-      height: 56px;
-      display: flex;
-      position: absolute;
-
-      .logo-icon {
-        width: 100%;
-        height: 100%;
-        fill: #fff;
-      }
-      .loading-spinner {
-        display: flex;
-        position: absolute;
-        border: 4px solid #f3f3f3;
-        border-top: 4px solid #678184;
-        border-radius: 50%;
-        width: 56px;
-        height: 56px;
-        animation: spin 1s linear infinite;
-      }
-    }
-
-    .bottom {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-        "Helvetica Neue", Arial, sans-serif;
-      display: flex;
-      position: fixed;
-      top: 0;
-      left: 0;
-      padding: 80px;
-      flex-direction: column;
-
-      h1 {
-        color: #fff;
-      }
-      p {
-        color: #fff;
-        letter-spacing: 2px;
-      }
-    }
-  }
-
-  @keyframes spin {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-
-  .content {
-    display: flex;
+    padding: 80px;
     flex-direction: column;
-    width: 100%;
-    max-width: 1360px;
-    align-self: center;
-    align-items: center;
 
-    &.hidden {
-      display: none;
+    h1 {
+      color: #fff;
     }
-
-    .animated-section {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 2s ease, transform 1s ease;
-
-      &.visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .introduction {
-      display: flex;
-      align-items: center;
-      min-height: 100vh;
-
-      .content-left {
-        display: flex;
-        flex-direction: column;
-        width: 40%;
-        gap: 20px;
-
-        span {
-          letter-spacing: 8px;
-        }
-        .main-links {
-          display: flex;
-          gap: 20px;
-          align-items: center;
-        }
-      }
-
-      .content-right {
-        display: flex;
-        width: 60%;
-        justify-content: center;
-
-        img {
-          width: 600px;
-        }
-      }
-    }
-    .projects {
-      display: flex;
-      min-height: 100vh;
-      flex-direction: column;
-      padding-top: 120px;
-      gap: 80px;
-
-      .title {
-        span {
-          font-size: 12px;
-          letter-spacing: 4px;
-        }
-      }
-
-      .grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 120px;
-
-        .item {
-          display: flex;
-          flex-direction: column;
-          padding: 20px;
-          height: 780px;
-          background-position: center;
-          background-size: cover;
-          transition: 0.5s;
-          background-blend-mode: multiply;
-
-          .view-git {
-            color: #fff;
-            opacity: 0;
-            transition: 0.5s;
-          }
-
-          &:hover {
-            background-position: right bottom;
-            transition: 0.5s;
-            background-color: #678184;
-
-            .view-git {
-              margin-top: 20px;
-              transition: 0.5s;
-              opacity: 100;
-            }
-          }
-        }
-        .item.cosmos {
-          background-image: url(./assets/images/cosmos-background.jpg);
-        }
-        .item.vetlink {
-          background-image: url(./assets/images/vetlink-background.jpg);
-        }
-        .item.finance {
-          background-image: url(./assets/images/finance-background.jpg);
-        }
-      }
-    }
-
-    .about-me {
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      padding-block: 120px;
-      width: 100%;
-      gap: 80px;
-
-      a {
-        width: fit-content;
-      }
-
-      .title {
-        span {
-          font-size: 12px;
-          letter-spacing: 4px;
-        }
-      }
-
-      .skills {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-
-        .logos {
-          display: flex;
-          flex-wrap: wrap;
-          width: 100%;
-          justify-content: space-between;
-          gap: 20px;
-
-          svg {
-            width: 40px;
-            height: 40px;
-          }
-        }
-      }
+    p {
+      color: #fff;
+      letter-spacing: 2px;
     }
   }
 }
 
-@media (max-width: 1500px) {
-  .main-container {
-    .content {
-      padding-inline: 40px;
-      max-width: none;
-    }
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
   }
-}
-@media (max-width: 1300px) {
-  .main-container {
-    .content {
-      .introduction {
-        padding-top: 160px;
-        .content-right {
-          img {
-            width: 400px;
-          }
-        }
-      }
-      .projects {
-        .grid {
-          .item {
-            height: 600px;
-          }
-        }
-      }
-    }
+  100% {
+    transform: rotate(360deg);
   }
 }
 
-@media (max-width: 1100px) {
-  .main-container {
-    .content {
-      .projects {
-        .grid {
-          .item {
-            height: 480px;
-          }
-        }
-      }
-    }
-  }
+.main-container {
+  display: flex;
+  flex-direction: column;
 }
 
 @media (max-width: 900px) {
@@ -310,87 +113,13 @@
       width: auto;
       text-wrap: nowrap;
     }
-    .content {
-      padding-inline: 20px;
-      .introduction {
-        flex-direction: column-reverse;
-        justify-content: center;
-
-        .content-left {
-          width: auto;
-          z-index: 1;
-        }
-
-        .content-right {
-          width: auto;
-          margin-bottom: -48px;
-
-          img {
-            width: 340px;
-          }
-        }
-      }
-      .projects {
-        .grid {
-          grid-template-columns: repeat(1, 1fr);
-          .item {
-            height: 780px;
-          }
-        }
-      }
-    }
   }
 }
 
-@media (max-width: 650px) {
-  .main-container {
-    .content {
-      .projects {
-        .grid {
-          .item {
-            height: 600px;
-          }
-        }
-      }
-    }
-  }
-}
 @media (max-width: 500px) {
-  .main-container {
-    .loading-screen {
-      .bottom {
-        padding: 20px;
-      }
-    }
-    .header-container {
-      .logo {
-        .logo-text {
-          display: none;
-        }
-      }
-    }
-    .content {
-      .projects {
-        .grid {
-          .item {
-            height: 480px;
-          }
-        }
-      }
-    }
-  }
-}
-
-@media (max-width: 360px) {
-  .main-container {
-    .content {
-      .introduction {
-        .content-right {
-          img {
-            width: 280px;
-          }
-        }
-      }
+  .loading-screen {
+    .bottom {
+      padding: 20px;
     }
   }
 }

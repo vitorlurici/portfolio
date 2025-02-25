@@ -1,0 +1,257 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1360px;
+  align-self: center;
+  align-items: center;
+
+  &.hidden {
+    display: none;
+  }
+
+  .animated-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 2s ease, transform 1s ease;
+
+    &.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .introduction {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+
+    .content-left {
+      display: flex;
+      flex-direction: column;
+      width: 40%;
+      gap: 20px;
+
+      span {
+        letter-spacing: 8px;
+      }
+      .main-links {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+      }
+    }
+
+    .content-right {
+      display: flex;
+      width: 60%;
+      justify-content: center;
+
+      img {
+        width: 600px;
+      }
+    }
+  }
+  .projects {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    padding-top: 120px;
+    gap: 80px;
+
+    .title {
+      span {
+        font-size: 12px;
+        letter-spacing: 4px;
+      }
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 120px;
+
+      .item {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        height: 780px;
+        background-position: center;
+        background-size: cover;
+        transition: 0.5s;
+        background-blend-mode: multiply;
+
+        .view-git {
+          color: #fff;
+          opacity: 0;
+          transition: 0.5s;
+        }
+
+        &:hover {
+          background-position: right bottom;
+          transition: 0.5s;
+          background-color: #678184;
+
+          .view-git {
+            margin-top: 20px;
+            transition: 0.5s;
+            opacity: 100;
+          }
+        }
+      }
+      .item.cosmos {
+        background-image: url(../../assets/images/cosmos-background.jpg);
+      }
+      .item.vetlink {
+        background-image: url(../../assets/images/vetlink-background.jpg);
+      }
+      .item.finance {
+        background-image: url(../../assets/images/finance-background.jpg);
+      }
+    }
+  }
+
+  .about-me {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-block: 120px;
+    width: 100%;
+    gap: 80px;
+
+    a {
+      width: fit-content;
+    }
+
+    .title {
+      span {
+        font-size: 12px;
+        letter-spacing: 4px;
+      }
+    }
+
+    .skills {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      .logos {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: space-between;
+        gap: 20px;
+
+        svg {
+          width: 40px;
+          height: 40px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1500px) {
+  .content {
+    padding-inline: 40px;
+    max-width: none;
+  }
+}
+@media (max-width: 1300px) {
+  .content {
+    .introduction {
+      padding-top: 160px;
+      .content-right {
+        img {
+          width: 400px;
+        }
+      }
+    }
+    .projects {
+      .grid {
+        .item {
+          height: 600px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1100px) {
+  .content {
+    .projects {
+      .grid {
+        .item {
+          height: 480px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .content {
+    padding-inline: 20px;
+    .introduction {
+      flex-direction: column-reverse;
+      justify-content: center;
+
+      .content-left {
+        width: auto;
+        z-index: 1;
+      }
+
+      .content-right {
+        width: auto;
+        margin-bottom: -48px;
+
+        img {
+          width: 340px;
+        }
+      }
+    }
+    .projects {
+      .grid {
+        grid-template-columns: repeat(1, 1fr);
+        .item {
+          height: 780px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 650px) {
+  .content {
+    .projects {
+      .grid {
+        .item {
+          height: 600px;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 500px) {
+  .content {
+    .projects {
+      .grid {
+        .item {
+          height: 480px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 360px) {
+  .content {
+    .introduction {
+      .content-right {
+        img {
+          width: 280px;
+        }
+      }
+    }
+  }
+}

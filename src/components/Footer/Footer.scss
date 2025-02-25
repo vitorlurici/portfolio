@@ -1,5 +1,9 @@
 footer {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
   width: 100%;
+  max-width: 1360px;
 
   hr {
     width: 100%;
@@ -52,13 +56,21 @@ footer {
   }
 }
 
+@media (max-width: 1500px) {
+  .main-container {
+    footer {
+      padding-inline: 40px;
+      max-width: none;
+    }
+  }
+}
+
 @media (max-width: 900px) {
   .main-container {
-    .content {
-      footer {
-        .footer-content {
-          grid-template-columns: repeat(1, 1fr);
-        }
+    footer {
+      padding-inline: 20px;
+      .footer-content {
+        grid-template-columns: repeat(1, 1fr);
       }
     }
   }
