@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Link, useOutletContext } from "react-router-dom";
+import { Link, useOutletContext, useLocation } from "react-router-dom";
 import { translations } from "../../translations/home/translations";
 import { useLanguage } from "../../hooks/useLanguage";
 import me from "../../assets/images/me.png";
@@ -36,6 +36,7 @@ export const Home = () => {
     new Set()
   );
   const { language } = useLanguage();
+  const location = useLocation();
 
   useEffect(() => {
     if (!isLoadingComplete) {
@@ -75,6 +76,13 @@ export const Home = () => {
     };
   }, []);
 
+  const buildLink = (path: string) => {
+    if (location.pathname.startsWith("/pt")) {
+      return `/pt${path}`;
+    }
+    return path;
+  };
+
   return (
     <div className={`content ${!isLoadingComplete ? "hidden" : ""}`}>
       <div
@@ -113,11 +121,7 @@ export const Home = () => {
           <h1>{translations[language].projectsTitle}</h1>
         </div>
         <div className="grid">
-          <Link
-            to="https://github.com/GabrielRogerioMessias/project-integrator-VI-vet-link"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <Link to={buildLink("/projects/vetlink")}>
             <div className="item vetlink">
               <p>2024</p>
               <h2>VETLINK</h2>
@@ -125,11 +129,7 @@ export const Home = () => {
               <p className="view-git">{translations[language].viewGithub}</p>
             </div>
           </Link>
-          <Link
-            to="https://github.com/vitorlurici/cosmos"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <Link to={buildLink("/projects/cosmos")}>
             <div className="item cosmos">
               <p>2024</p>
               <h2>COSMOS</h2>
@@ -137,11 +137,7 @@ export const Home = () => {
               <p className="view-git">{translations[language].viewGithub}</p>
             </div>
           </Link>
-          <Link
-            to="https://github.com/vitorlurici/finance-project"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <Link to={buildLink("/projects/finance")}>
             <div className="item finance">
               <p>2023 - {translations[language].inProgress}</p>
               <h2>FINANCE</h2>

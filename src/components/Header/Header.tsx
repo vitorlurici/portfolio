@@ -2,7 +2,7 @@ import { LogoIcon } from "../../assets/svg/LogoIcon";
 import { DownloadIcon } from "../../assets/svg/DownloadIcon";
 import { LanguageSelector } from "../LanguageSelector/LanguageSelector";
 import { useLanguage } from "../../hooks/useLanguage";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom"; // Importe useLocation
 import { translations } from "../../translations/header/translations";
 import "./Header.scss";
 
@@ -13,24 +13,28 @@ interface HeaderProps {
 export const Header = ({ resetApp }: HeaderProps) => {
   const { language, setLanguage } = useLanguage();
   const navigate = useNavigate();
+  const location = useLocation();
 
   const handleLanguageChange = (lang: "en" | "pt-br") => {
     setLanguage(lang);
-    if (lang === "pt-br") {
-      navigate("/pt");
-    } else {
-      navigate("/");
-    }
+
+    const currentPath = location.pathname;
+    const isPtRoute = currentPath.startsWith("/pt");
+
+    const routeWithoutPrefix = isPtRoute ? currentPath.slice(3) : currentPath;
+
+    const newPrefix = lang === "pt-br" ? "/pt" : "/";
+
+    navigate(`${newPrefix}${routeWithoutPrefix}`);
   };
 
   const handleLogoClick = () => {
-    if (location.pathname.startsWith("/portfolio/pt")) {
+    if (location.pathname.startsWith("/pt")) {
       navigate("/pt");
-      resetApp();
     } else {
       navigate("/");
-      resetApp();
     }
+    resetApp();
   };
 
   return (
