@@ -19,7 +19,15 @@ const ProjectDetails = () => {
         <div className="left-content">
           <p>{project.getCaseStudy(language)}</p>
           <h1>{project.title}</h1>
-          <p>{project.year}</p>
+          <div className="year">
+            <p>{project.getYearTitle(language)}</p>
+            <span>
+              {project.year}
+              {project.id === "finance" && (
+                <> - {project.getInProgressText(language)}</>
+              )}
+            </span>
+          </div>
           <a
             href={project.githubLink}
             target="_blank"
@@ -29,7 +37,7 @@ const ProjectDetails = () => {
           </a>
         </div>
         <div className="right-content">
-          <p>{project.getDescription(language)}</p>
+          <span>{project.getDescription(language)}</span>
         </div>
       </div>
 
@@ -45,8 +53,6 @@ const ProjectDetails = () => {
           <img key={index} src={img} alt={`Screenshot of ${project.title}`} />
         ))}
       </div>
-
-      {project.year === "2023" && <p>{project.getInProgressText(language)}</p>}
     </div>
   );
 };

@@ -7,6 +7,7 @@ export interface Project {
   githubLink: string;
   technologies: string[];
   images: string[];
+  getYearTitle: (language: "en" | "pt-br") => string;
   getCaseStudy: (language: "en" | "pt-br") => string;
   getDescription: (language: "en" | "pt-br") => string;
   getViewGithubText: (language: "en" | "pt-br") => string;
@@ -25,6 +26,7 @@ export const projects: Project[] = [
       "/portfolio/images/vetlink1.jpg",
       "/portfolio/images/vetlink2.jpg",
     ],
+    getYearTitle: (language) => translations[language].yearTitle,
     getCaseStudy: (language) => translations[language].caseStudy,
     getDescription: (language) => translations[language].vetlinkDescription,
     getViewGithubText: (language) => translations[language].viewGithub,
@@ -37,6 +39,7 @@ export const projects: Project[] = [
     githubLink: "https://github.com/vitorlurici/cosmos",
     technologies: ["React", "TypeScript", "Sass"],
     images: ["/portfolio/images/cosmos1.jpg", "/portfolio/images/cosmos2.jpg"],
+    getYearTitle: (language) => translations[language].yearTitle,
     getCaseStudy: (language) => translations[language].caseStudy,
     getDescription: (language) => translations[language].cosmosDescription,
     getViewGithubText: (language) => translations[language].viewGithub,
@@ -52,6 +55,7 @@ export const projects: Project[] = [
       "/portfolio/images/finance1.jpg",
       "/portfolio/images/finance2.jpg",
     ],
+    getYearTitle: (language) => translations[language].yearTitle,
     getCaseStudy: (language) => translations[language].caseStudy,
     getDescription: (language) => translations[language].financeDescription,
     getViewGithubText: (language) => translations[language].viewGithub,

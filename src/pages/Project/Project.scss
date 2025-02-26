@@ -2,6 +2,7 @@
   padding-top: 160px;
   display: flex;
   flex-direction: column;
+  width: 100%;
   max-width: 1360px;
   align-self: center;
   padding-bottom: 120px;
@@ -19,6 +20,16 @@
       flex-direction: column;
       gap: 20px;
       width: 50%;
+
+      .year {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+
+        span {
+          color: #678184;
+        }
+      }
     }
 
     .right-content {
