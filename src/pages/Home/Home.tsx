@@ -26,6 +26,7 @@ import {
 
 interface HomeContentProps {
   isLoadingComplete: boolean;
+  resetApp: () => void;
 }
 
 export const Home = () => {

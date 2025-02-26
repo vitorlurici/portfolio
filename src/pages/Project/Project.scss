@@ -8,6 +8,10 @@
   padding-bottom: 120px;
   gap: 120px;
 
+  &.hidden {
+    display: none;
+  }
+
   p {
     letter-spacing: 4px;
   }

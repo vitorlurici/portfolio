@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom"; // Importe useLocation
 import "./App.scss";
 import { LogoIcon } from "./assets/svg/LogoIcon";
 import { Header } from "./components/Header/Header";
@@ -11,8 +12,21 @@ import { Outlet } from "react-router-dom";
 function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [isLoadingComplete, setIsLoadingComplete] = useState(false);
-
+  const [hasReset, setHasReset] = useState(false);
   const { language } = useLanguage();
+  const location = useLocation();
+
+  const getLoadingTranslations = () => {
+    if (location.pathname.includes("/projects/vetlink")) {
+      return translations[language].vetLinkLoading;
+    } else if (location.pathname.includes("/projects/cosmos")) {
+      return translations[language].cosmosLoading;
+    } else if (location.pathname.includes("/projects/finance")) {
+      return translations[language].financeLoading;
+    } else {
+      return translations[language].mainLoading;
+    }
+  };
 
   const resetApp = () => {
     setIsLoading(true);
@@ -46,6 +60,15 @@ function App() {
     };
   }, []);
 
+  useEffect(() => {
+    if (location.pathname.includes("/projects") && !hasReset) {
+      resetApp();
+      setHasReset(true);
+    } else if (!location.pathname.includes("/projects")) {
+      setHasReset(false);
+    }
+  }, [location.pathname, resetApp, hasReset]);
+
   return (
     <>
       {isLoading && (
@@ -57,14 +80,14 @@ function App() {
             <div className="loading-spinner" />
           </div>
           <div className="bottom">
-            <p>{translations[language].welcome}</p>
-            <h1>{translations[language].wait}</h1>
+            <p>{getLoadingTranslations().subTitle}</p>
+            <h1>{getLoadingTranslations().Title}</h1>
           </div>
         </div>
       )}
       <main className="main-container">
         <Header resetApp={resetApp} />
-        <Outlet context={{ isLoadingComplete }} />
+        <Outlet context={{ isLoadingComplete, resetApp }} />
         <Footer resetApp={resetApp} />
         <ScrollUp />
       </main>

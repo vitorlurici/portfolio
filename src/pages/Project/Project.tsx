@@ -1,9 +1,14 @@
-import { useParams } from "react-router-dom";
+import { useOutletContext, useParams } from "react-router-dom";
 import { projects } from "./projectsData";
 import { useLanguage } from "../../hooks/useLanguage";
 import "./Project.scss";
 
+interface ProjectContentProps {
+  isLoadingComplete: boolean;
+}
+
 const ProjectDetails = () => {
+  const { isLoadingComplete } = useOutletContext<ProjectContentProps>();
   const { id } = useParams<{ id: string }>();
   const { language } = useLanguage();
 
@@ -14,7 +19,7 @@ const ProjectDetails = () => {
   }
 
   return (
-    <div className="project-main">
+    <div className={`project-main ${!isLoadingComplete ? "hidden" : ""}`}>
       <div className="top-container">
         <div className="left-content">
           <p>{project.getCaseStudy(language)}</p>
