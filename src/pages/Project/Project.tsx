@@ -2,6 +2,7 @@ import { useOutletContext, useParams } from "react-router-dom";
 import { projects } from "./projectsData";
 import { useLanguage } from "../../hooks/useLanguage";
 import "./Project.scss";
+import { techIcons } from "../../assets/svg";
 
 interface ProjectContentProps {
   isLoadingComplete: boolean;
@@ -50,9 +51,26 @@ const ProjectDetails = () => {
               {project.getViewProjectText(language)}
             </a>
           </div>
+          <div className="item">
+            <p>{project.getProjectRole(language)}</p>
+            {project.role.map((role, index) => (
+              <span key={index}>{role}</span>
+            ))}
+          </div>
+          <div className="item">
+            <p>{project.getTech(language)}</p>
+            <div className="technologies">
+              {project.technologies.map((tech) => {
+                const IconComponent = techIcons[tech];
+                return <IconComponent key={tech} />;
+              })}
+            </div>
+          </div>
         </div>
         <div className="right-content">
-          <span>{project.getDescription(language)}</span>
+          {project.getDescription(language).map((paragraph, index) => (
+            <span key={index}>{paragraph}</span>
+          ))}
         </div>
       </div>
 

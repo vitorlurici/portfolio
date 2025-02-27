@@ -1,3 +1,4 @@
+import { techIcons } from "../../assets/svg";
 import { translations } from "../../translations/projects/translations";
 
 export interface Project {
@@ -6,14 +7,17 @@ export interface Project {
   year: string;
   githubLink: string;
   projectLink: string;
-  technologies: string[];
+  role: string[];
+  technologies: (keyof typeof techIcons)[];
   images: string[];
   mobileImages: string[];
   getYearTitle: (language: "en" | "pt-br") => string;
   getCaseStudy: (language: "en" | "pt-br") => string;
-  getDescription: (language: "en" | "pt-br") => string;
+  getDescription: (language: "en" | "pt-br") => string[];
   getViewGithubText: (language: "en" | "pt-br") => string;
   getViewProjectText: (language: "en" | "pt-br") => string;
+  getProjectRole: (language: "en" | "pt-br") => string;
+  getTech: (language: "en" | "pt-br") => string;
   getInProgressText: (language: "en" | "pt-br") => string;
 }
 
@@ -25,7 +29,8 @@ export const projects: Project[] = [
     githubLink:
       "https://github.com/GabrielRogerioMessias/project-integrator-VI-vet-link",
     projectLink: "",
-    technologies: ["React", "Node.js", "Firebase"],
+    role: ["Front-end", "Back-end", "UX/UI", "App Design"],
+    technologies: ["React", "TypeScript", "Firebase"],
     images: ["/portfolio/images/vetlink/1.jpg"],
     mobileImages: [
       "/portfolio/images/vetlink/2.png",
@@ -42,6 +47,8 @@ export const projects: Project[] = [
     getDescription: (language) => translations[language].vetlinkDescription,
     getViewGithubText: (language) => translations[language].viewGithub,
     getViewProjectText: (language) => translations[language].viewProject,
+    getProjectRole: (language) => translations[language].role,
+    getTech: (language) => translations[language].tech,
     getInProgressText: (language) => translations[language].inProgress,
   },
   {
@@ -50,7 +57,8 @@ export const projects: Project[] = [
     year: "2024",
     githubLink: "https://github.com/vitorlurici/cosmos",
     projectLink: "https://cosmos-sepia.vercel.app/",
-    technologies: ["React", "TypeScript", "Sass"],
+    role: ["Front-end", "Back-end", "UX/UI", "Web Design"],
+    technologies: ["React", "JavaScript", "Firebase", "Sass"],
     images: [
       "/portfolio/images/cosmos/1.jpg",
       "/portfolio/images/cosmos/2.jpg",
@@ -68,6 +76,8 @@ export const projects: Project[] = [
     getDescription: (language) => translations[language].cosmosDescription,
     getViewGithubText: (language) => translations[language].viewGithub,
     getViewProjectText: (language) => translations[language].viewProject,
+    getProjectRole: (language) => translations[language].role,
+    getTech: (language) => translations[language].tech,
     getInProgressText: (language) => translations[language].inProgress,
   },
   {
@@ -76,7 +86,8 @@ export const projects: Project[] = [
     year: "2023",
     githubLink: "https://github.com/vitorlurici/finance-project",
     projectLink: "https://gerenciadorfinance.netlify.app/",
-    technologies: ["React", "Node.js", "MongoDB"],
+    role: ["Front-end", "Back-end", "UX/UI", "Web Design"],
+    technologies: ["React", "TypeScript", "Sass", "Java", "MySQL"],
     images: [
       "/portfolio/images/finance/1.jpg",
       "/portfolio/images/finance/2.jpg",
@@ -93,6 +104,8 @@ export const projects: Project[] = [
     getDescription: (language) => translations[language].financeDescription,
     getViewGithubText: (language) => translations[language].viewGithub,
     getViewProjectText: (language) => translations[language].viewProject,
+    getProjectRole: (language) => translations[language].role,
+    getTech: (language) => translations[language].tech,
     getInProgressText: (language) => translations[language].inProgress,
   },
 ];

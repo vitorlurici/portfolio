@@ -22,8 +22,14 @@ export const Footer = ({ resetApp }: FooterProps) => {
     }
   };
 
+  const handleLinkClick = (path: string) => {
+    const finalPath = buildLink(path);
+    navigate(finalPath);
+    resetApp();
+  };
+
   const buildLink = (path: string) => {
-    if (location.pathname.startsWith("/pt")) {
+    if (location.pathname.startsWith("/portfolio/pt")) {
       return `/pt${path}`;
     }
     return path;
@@ -63,13 +69,28 @@ export const Footer = ({ resetApp }: FooterProps) => {
           <h4>{translations[language].footerProjects}</h4>
           <ul>
             <li>
-              <Link to={buildLink("/projects/vetlink")}>Vetlink </Link>
+              <Link
+                to={buildLink("/projects/vetlink")}
+                onClick={() => handleLinkClick("/projects/vetlink")}
+              >
+                Vetlink
+              </Link>
             </li>
             <li>
-              <Link to={buildLink("/projects/cosmos")}>Cosmos</Link>
+              <Link
+                to={buildLink("/projects/cosmos")}
+                onClick={() => handleLinkClick("/projects/cosmos")}
+              >
+                Cosmos
+              </Link>
             </li>
             <li>
-              <Link to={buildLink("/projects/finance")}>Finance</Link>
+              <Link
+                to={buildLink("/projects/finance")}
+                onClick={() => handleLinkClick("/projects/finance")}
+              >
+                Finance
+              </Link>
             </li>
           </ul>
         </div>

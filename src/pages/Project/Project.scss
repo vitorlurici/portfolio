@@ -36,11 +36,25 @@
             text-decoration: underline 2px;
           }
         }
+
+        .technologies {
+          display: flex;
+          width: 100%;
+          gap: 20px;
+
+          svg {
+            width: 40px;
+            height: 40px;
+          }
+        }
       }
     }
 
     .right-content {
       width: 50%;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
     }
   }
 
@@ -64,5 +78,27 @@
 @media (max-width: 1500px) {
   .project-main {
     padding-inline: 40px;
+  }
+}
+
+@media (max-width: 900px) {
+  .project-main {
+    .top-container {
+      flex-direction: column;
+      gap: 80px;
+
+      .left-content {
+        width: 100%;
+      }
+      .right-content {
+        width: 100%;
+      }
+    }
+
+    .project-images {
+      .mobile {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
   }
 }
