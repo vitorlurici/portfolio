@@ -24,13 +24,17 @@
       gap: 20px;
       width: 50%;
 
-      .year {
+      .item {
         display: flex;
         flex-direction: column;
         gap: 4px;
 
-        span {
-          color: #678184;
+        a {
+          width: fit-content;
+
+          &:hover {
+            text-decoration: underline 2px;
+          }
         }
       }
     }

@@ -5,6 +5,7 @@ export interface Project {
   title: string;
   year: string;
   githubLink: string;
+  projectLink: string;
   technologies: string[];
   images: string[];
   mobileImages: string[];
@@ -12,6 +13,7 @@ export interface Project {
   getCaseStudy: (language: "en" | "pt-br") => string;
   getDescription: (language: "en" | "pt-br") => string;
   getViewGithubText: (language: "en" | "pt-br") => string;
+  getViewProjectText: (language: "en" | "pt-br") => string;
   getInProgressText: (language: "en" | "pt-br") => string;
 }
 
@@ -22,6 +24,7 @@ export const projects: Project[] = [
     year: "2024",
     githubLink:
       "https://github.com/GabrielRogerioMessias/project-integrator-VI-vet-link",
+    projectLink: "",
     technologies: ["React", "Node.js", "Firebase"],
     images: ["/portfolio/images/vetlink/1.jpg"],
     mobileImages: [
@@ -38,6 +41,7 @@ export const projects: Project[] = [
     getCaseStudy: (language) => translations[language].caseStudy,
     getDescription: (language) => translations[language].vetlinkDescription,
     getViewGithubText: (language) => translations[language].viewGithub,
+    getViewProjectText: (language) => translations[language].viewProject,
     getInProgressText: (language) => translations[language].inProgress,
   },
   {
@@ -45,6 +49,7 @@ export const projects: Project[] = [
     title: "COSMOS",
     year: "2024",
     githubLink: "https://github.com/vitorlurici/cosmos",
+    projectLink: "https://cosmos-sepia.vercel.app/",
     technologies: ["React", "TypeScript", "Sass"],
     images: [
       "/portfolio/images/cosmos/1.jpg",
@@ -62,6 +67,7 @@ export const projects: Project[] = [
     getCaseStudy: (language) => translations[language].caseStudy,
     getDescription: (language) => translations[language].cosmosDescription,
     getViewGithubText: (language) => translations[language].viewGithub,
+    getViewProjectText: (language) => translations[language].viewProject,
     getInProgressText: (language) => translations[language].inProgress,
   },
   {
@@ -69,6 +75,7 @@ export const projects: Project[] = [
     title: "FINANCE",
     year: "2023",
     githubLink: "https://github.com/vitorlurici/finance-project",
+    projectLink: "https://gerenciadorfinance.netlify.app/",
     technologies: ["React", "Node.js", "MongoDB"],
     images: [
       "/portfolio/images/finance/1.jpg",
@@ -85,6 +92,7 @@ export const projects: Project[] = [
     getCaseStudy: (language) => translations[language].caseStudy,
     getDescription: (language) => translations[language].financeDescription,
     getViewGithubText: (language) => translations[language].viewGithub,
+    getViewProjectText: (language) => translations[language].viewProject,
     getInProgressText: (language) => translations[language].inProgress,
   },
 ];

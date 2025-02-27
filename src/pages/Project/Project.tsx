@@ -24,7 +24,7 @@ const ProjectDetails = () => {
         <div className="left-content">
           <p>{project.getCaseStudy(language)}</p>
           <h1>{project.title}</h1>
-          <div className="year">
+          <div className="item">
             <p>{project.getYearTitle(language)}</p>
             <span>
               {project.year}
@@ -33,13 +33,23 @@ const ProjectDetails = () => {
               )}
             </span>
           </div>
-          <a
-            href={project.githubLink}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {project.getViewGithubText(language)}
-          </a>
+          <div className="item">
+            <p>LINKS</p>
+            <a
+              href={project.githubLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {project.getViewGithubText(language)}
+            </a>
+            <a
+              href={project.projectLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {project.getViewProjectText(language)}
+            </a>
+          </div>
         </div>
         <div className="right-content">
           <span>{project.getDescription(language)}</span>
