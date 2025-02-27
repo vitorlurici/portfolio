@@ -7,7 +7,6 @@
   align-self: center;
   padding-bottom: 120px;
   gap: 120px;
-
   &.hidden {
     display: none;
   }
@@ -39,5 +38,27 @@
     .right-content {
       width: 50%;
     }
+  }
+
+  .project-images {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+
+    .mobile {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media (max-width: 1500px) {
+  .project-main {
+    padding-inline: 40px;
   }
 }

@@ -50,6 +50,11 @@ const ProjectDetails = () => {
         {project.images.map((img, index) => (
           <img key={index} src={img} alt={`Screenshot of ${project.title}`} />
         ))}
+        <div className="mobile">
+          {project.mobileImages.map((img, index) => (
+            <img key={index} src={img} alt={`Screenshot of ${project.title}`} />
+          ))}
+        </div>
       </div>
     </div>
   );

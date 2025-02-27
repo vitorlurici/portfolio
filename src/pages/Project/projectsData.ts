@@ -7,6 +7,7 @@ export interface Project {
   githubLink: string;
   technologies: string[];
   images: string[];
+  mobileImages: string[];
   getYearTitle: (language: "en" | "pt-br") => string;
   getCaseStudy: (language: "en" | "pt-br") => string;
   getDescription: (language: "en" | "pt-br") => string;
@@ -22,9 +23,16 @@ export const projects: Project[] = [
     githubLink:
       "https://github.com/GabrielRogerioMessias/project-integrator-VI-vet-link",
     technologies: ["React", "Node.js", "Firebase"],
-    images: [
-      "/portfolio/images/vetlink1.jpg",
-      "/portfolio/images/vetlink2.jpg",
+    images: ["/portfolio/images/vetlink/1.jpg"],
+    mobileImages: [
+      "/portfolio/images/vetlink/2.png",
+      "/portfolio/images/vetlink/3.png",
+      "/portfolio/images/vetlink/4.png",
+      "/portfolio/images/vetlink/5.png",
+      "/portfolio/images/vetlink/6.png",
+      "/portfolio/images/vetlink/7.png",
+      "/portfolio/images/vetlink/8.png",
+      "/portfolio/images/vetlink/9.png",
     ],
     getYearTitle: (language) => translations[language].yearTitle,
     getCaseStudy: (language) => translations[language].caseStudy,
@@ -38,7 +46,18 @@ export const projects: Project[] = [
     year: "2024",
     githubLink: "https://github.com/vitorlurici/cosmos",
     technologies: ["React", "TypeScript", "Sass"],
-    images: ["/portfolio/images/cosmos1.jpg", "/portfolio/images/cosmos2.jpg"],
+    images: [
+      "/portfolio/images/cosmos/1.jpg",
+      "/portfolio/images/cosmos/2.jpg",
+      "/portfolio/images/cosmos/3.jpg",
+      "/portfolio/images/cosmos/4.jpg",
+    ],
+    mobileImages: [
+      "/portfolio/images/cosmos/5.jpeg",
+      "/portfolio/images/cosmos/6.jpeg",
+      "/portfolio/images/cosmos/7.jpeg",
+      "/portfolio/images/cosmos/8.jpeg",
+    ],
     getYearTitle: (language) => translations[language].yearTitle,
     getCaseStudy: (language) => translations[language].caseStudy,
     getDescription: (language) => translations[language].cosmosDescription,
@@ -52,8 +71,15 @@ export const projects: Project[] = [
     githubLink: "https://github.com/vitorlurici/finance-project",
     technologies: ["React", "Node.js", "MongoDB"],
     images: [
-      "/portfolio/images/finance1.jpg",
-      "/portfolio/images/finance2.jpg",
+      "/portfolio/images/finance/1.jpg",
+      "/portfolio/images/finance/2.jpg",
+      "/portfolio/images/finance/3.jpg",
+      "/portfolio/images/finance/4.jpg",
+    ],
+    mobileImages: [
+      "/portfolio/images/finance/5.jpg",
+      "/portfolio/images/finance/6.jpg",
+      "/portfolio/images/finance/7.jpg",
     ],
     getYearTitle: (language) => translations[language].yearTitle,
     getCaseStudy: (language) => translations[language].caseStudy,
