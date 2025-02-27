@@ -46,13 +46,6 @@ const ProjectDetails = () => {
         </div>
       </div>
 
-      <h2>Technologies used:</h2>
-      <ul>
-        {project.technologies.map((tech, index) => (
-          <li key={index}>{tech}</li>
-        ))}
-      </ul>
-
       <div className="project-images">
         {project.images.map((img, index) => (
           <img key={index} src={img} alt={`Screenshot of ${project.title}`} />

@@ -22,6 +22,13 @@ export const Footer = ({ resetApp }: FooterProps) => {
     }
   };
 
+  const buildLink = (path: string) => {
+    if (location.pathname.startsWith("/pt")) {
+      return `/pt${path}`;
+    }
+    return path;
+  };
+
   return (
     <footer>
       <hr />
@@ -56,34 +63,13 @@ export const Footer = ({ resetApp }: FooterProps) => {
           <h4>{translations[language].footerProjects}</h4>
           <ul>
             <li>
-              {" "}
-              <Link
-                to="https://github.com/GabrielRogerioMessias/project-integrator-VI-vet-link"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Vetlink{" "}
-              </Link>
+              <Link to={buildLink("/projects/vetlink")}>Vetlink </Link>
             </li>
             <li>
-              {" "}
-              <Link
-                to="https://github.com/vitorlurici/cosmos"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Cosmos
-              </Link>
+              <Link to={buildLink("/projects/cosmos")}>Cosmos</Link>
             </li>
             <li>
-              {" "}
-              <Link
-                to="https://github.com/vitorlurici/finance-project"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Finance
-              </Link>
+              <Link to={buildLink("/projects/finance")}>Finance</Link>
             </li>
           </ul>
         </div>
