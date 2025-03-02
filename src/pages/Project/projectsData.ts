@@ -28,7 +28,7 @@ export const projects: Project[] = [
     year: "2024",
     githubLink:
       "https://github.com/GabrielRogerioMessias/project-integrator-VI-vet-link",
-    projectLink: "",
+    projectLink: "https://appetize.io/app/b_ggamvejhkgqipumggc6hzh67su",
     role: ["Front-end", "Back-end", "UX/UI", "App Design"],
     technologies: ["React", "TypeScript", "Firebase"],
     images: ["/portfolio/images/vetlink/1.jpg"],
