@@ -2,8 +2,8 @@ export const translations = {
   en: {
     caseStudy: "CASE STUDY",
     yearTitle: "YEAR",
-    viewGithub: "View repository on GitHub →",
-    viewProject: "View project →",
+    viewGithub: "View repository on GitHub",
+    viewProject: "View project live",
     role: "ROLE",
     tech: "TECHNOLOGIES",
     vetlinkDescription: [
@@ -28,8 +28,8 @@ export const translations = {
   "pt-br": {
     caseStudy: "ESTUDO DE CASO",
     yearTitle: "ANO",
-    viewGithub: "Acessar repositório no GitHub →",
-    viewProject: "Ver projeto →",
+    viewGithub: "Acessar repositório no GitHub",
+    viewProject: "Ver projeto em funcionamento",
     role: "FUNÇÃO",
     tech: "TECNOLOGIAS",
     vetlinkDescription: [

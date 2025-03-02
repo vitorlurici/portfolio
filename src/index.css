@@ -20,8 +20,7 @@
     background-color: #678184;
     color: #fff;
     border-style: none;
-    padding-block: 16px;
-    width: 200px;
+    padding: 16px 20px;
     border-radius: 24px;
     cursor: pointer;
     transition: 0.5s;
@@ -30,6 +29,7 @@
     display: flex;
     gap: 8px;
     align-items: center;
+    text-wrap: nowrap;
 
     svg {
       width: 16px;

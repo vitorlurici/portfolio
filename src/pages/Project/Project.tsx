@@ -76,14 +76,14 @@ const ProjectDetails = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              {project.getViewGithubText(language)}
+              <button>{project.getViewGithubText(language)}</button>
             </a>
             <a
               href={project.projectLink}
               target="_blank"
               rel="noopener noreferrer"
             >
-              {project.getViewProjectText(language)}
+              <button> {project.getViewProjectText(language)} </button>
             </a>
           </div>
           <div className="item">

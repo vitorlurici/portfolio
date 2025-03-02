@@ -43,10 +43,7 @@
 
         a {
           width: fit-content;
-
-          &:hover {
-            text-decoration: underline 2px;
-          }
+          text-wrap: nowrap;
         }
 
         .technologies {
