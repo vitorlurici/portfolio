@@ -23,6 +23,7 @@ import {
   TrelloIcon,
   JiraIcon,
 } from "../../assets/svg";
+import useTitleUpdate from "../../hooks/useTitleUpdate";
 
 interface HomeContentProps {
   isLoadingComplete: boolean;
@@ -83,6 +84,8 @@ export const Home = () => {
     }
     return path;
   };
+
+  useTitleUpdate(translations[language].title);
 
   return (
     <div className={`content ${!isLoadingComplete ? "hidden" : ""}`}>

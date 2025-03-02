@@ -1,5 +1,6 @@
 export const translations = {
   en: {
+    title: "Portfolio | Vitor Lurici - Software Engineer",
     role: "Software Engineer",
     introduction:
       "During my three years as a software engineering student, I honed strong critical and analytical skills, consistently delivering high-quality results in deadline-driven projects.",
@@ -23,6 +24,7 @@ export const translations = {
     techSkills: "Tech Skills",
   },
   "pt-br": {
+    title: "Portfólio | Vitor Lurici - Engenheiro de Software",
     role: "Engenheiro de Software",
     introduction:
       "Durante meus três anos como estudante de engenharia de software, desenvolvi fortes habilidades críticas e analíticas, entregando consistentemente resultados de alta qualidade em projetos com prazos limitados.",

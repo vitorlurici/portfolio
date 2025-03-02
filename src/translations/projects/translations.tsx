@@ -6,6 +6,9 @@ export const translations = {
     viewProject: "View project live",
     role: "ROLE",
     tech: "TECHNOLOGIES",
+    vetlinkTitle: "VetLink - Case Study | Vitor Lurici - Software Engineer",
+    cosmosTitle: "Cosmos - Case Study | Vitor Lurici - Software Engineer",
+    financeTitle: "Finance - Case Study | Vitor Lurici - Software Engineer",
     vetlinkDescription: [
       "VetLink is an innovative mobile application developed in React Native, specifically designed for veterinary professionals. The app's primary goal is to provide quick and detailed information about four major zoonoses: leptospirosis, leishmaniasis, rabies, and toxoplasmosis. It offers data organized into categories such as description, transmission, clinical signs, diagnosis, and treatment, making it an essential tool for fast and efficient consultations.",
       "One standout feature is the ability for veterinarians to add personal notes about each zoonosis, stored locally on the device. This makes VetLink a practical and personalized solution, allowing professionals to adapt the app to their specific needs.",
@@ -32,6 +35,12 @@ export const translations = {
     viewProject: "Ver projeto em funcionamento",
     role: "FUNÇÃO",
     tech: "TECNOLOGIAS",
+    vetlinkTitle:
+      "VetLink - Estudo de Caso | Vitor Lurici - Engenheiro de Software",
+    cosmosTitle:
+      "Cosmos - Estudo de Caso | Vitor Lurici - Engenheiro de Software",
+    financeTitle:
+      "Finance - Estudo de Caso | Vitor Lurici - Engenheiro de Software",
     vetlinkDescription: [
       "VetLink é um aplicativo mobile inovador desenvolvido em React Native, projetado especialmente para médicos veterinários. O app tem como objetivo principal fornecer informações rápidas e detalhadas sobre quatro importantes zoonoses: leptospirose, leishmaniose, raiva e toxoplasmose. Ele oferece dados organizados em categorias como descrição, transmissão, sinais clínicos, diagnóstico e tratamento, sendo uma ferramenta indispensável para consultas rápidas e eficientes.",
       "Uma funcionalidade de destaque é a possibilidade de os veterinários realizarem anotações pessoais sobre cada zoonose, armazenando-as localmente no dispositivo. Isso torna o VetLink uma solução prática e personalizada, permitindo que os profissionais adaptem o app às suas necessidades específicas.",

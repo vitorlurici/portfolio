@@ -11,6 +11,7 @@ export interface Project {
   technologies: (keyof typeof techIcons)[];
   images: string[];
   mobileImages: string[];
+  getTitle: (language: "en" | "pt-br") => string;
   getYearTitle: (language: "en" | "pt-br") => string;
   getCaseStudy: (language: "en" | "pt-br") => string;
   getDescription: (language: "en" | "pt-br") => string[];
@@ -42,6 +43,7 @@ export const projects: Project[] = [
       "/portfolio/images/vetlink/8.png",
       "/portfolio/images/vetlink/9.png",
     ],
+    getTitle: (language) => translations[language].vetlinkTitle,
     getYearTitle: (language) => translations[language].yearTitle,
     getCaseStudy: (language) => translations[language].caseStudy,
     getDescription: (language) => translations[language].vetlinkDescription,
@@ -71,6 +73,7 @@ export const projects: Project[] = [
       "/portfolio/images/cosmos/7.jpeg",
       "/portfolio/images/cosmos/8.jpeg",
     ],
+    getTitle: (language) => translations[language].cosmosTitle,
     getYearTitle: (language) => translations[language].yearTitle,
     getCaseStudy: (language) => translations[language].caseStudy,
     getDescription: (language) => translations[language].cosmosDescription,
@@ -99,6 +102,7 @@ export const projects: Project[] = [
       "/portfolio/images/finance/6.jpg",
       "/portfolio/images/finance/7.jpg",
     ],
+    getTitle: (language) => translations[language].financeTitle,
     getYearTitle: (language) => translations[language].yearTitle,
     getCaseStudy: (language) => translations[language].caseStudy,
     getDescription: (language) => translations[language].financeDescription,

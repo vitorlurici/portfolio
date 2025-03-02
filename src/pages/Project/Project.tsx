@@ -4,6 +4,7 @@ import { useLanguage } from "../../hooks/useLanguage";
 import "./Project.scss";
 import { techIcons } from "../../assets/svg";
 import { useEffect, useState } from "react";
+import useTitleUpdate from "../../hooks/useTitleUpdate";
 
 interface ProjectContentProps {
   isLoadingComplete: boolean;
@@ -48,6 +49,8 @@ const ProjectDetails = () => {
   if (!project) {
     return <div>Project not found</div>;
   }
+
+  useTitleUpdate(project.getTitle(language));
 
   return (
     <div className={`project-main ${!isLoadingComplete ? "hidden" : ""}`}>
