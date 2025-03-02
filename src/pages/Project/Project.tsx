@@ -3,6 +3,7 @@ import { projects } from "./projectsData";
 import { useLanguage } from "../../hooks/useLanguage";
 import "./Project.scss";
 import { techIcons } from "../../assets/svg";
+import { useEffect, useState } from "react";
 
 interface ProjectContentProps {
   isLoadingComplete: boolean;
@@ -12,6 +13,35 @@ const ProjectDetails = () => {
   const { isLoadingComplete } = useOutletContext<ProjectContentProps>();
   const { id } = useParams<{ id: string }>();
   const { language } = useLanguage();
+  const [visibleSections, setVisibleSections] = useState<Set<string>>(
+    new Set()
+  );
+
+  useEffect(() => {
+    if (!isLoadingComplete) {
+      setVisibleSections(new Set());
+    }
+  }, [isLoadingComplete]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setVisibleSections((prev) => new Set(prev).add(entry.target.id));
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    const sections = document.querySelectorAll(".animated-section");
+    sections.forEach((section) => observer.observe(section));
+
+    return () => {
+      sections.forEach((section) => observer.unobserve(section));
+    };
+  }, []);
 
   const project = projects.find((p) => p.id === id);
 
@@ -21,7 +51,12 @@ const ProjectDetails = () => {
 
   return (
     <div className={`project-main ${!isLoadingComplete ? "hidden" : ""}`}>
-      <div className="top-container">
+      <div
+        id="top-container"
+        className={`animated-section top-container ${
+          visibleSections.has("top-container") ? "visible" : ""
+        }`}
+      >
         <div className="left-content">
           <p>{project.getCaseStudy(language)}</p>
           <h1>{project.title}</h1>
@@ -74,7 +109,12 @@ const ProjectDetails = () => {
         </div>
       </div>
 
-      <div className="project-images">
+      <div
+        id="project-images"
+        className={`animated-section project-images ${
+          visibleSections.has("project-images") ? "visible" : ""
+        }`}
+      >
         {project.images.map((img, index) => (
           <img key={index} src={img} alt={`Screenshot of ${project.title}`} />
         ))}

@@ -66,7 +66,7 @@ export const Home = () => {
           }
         });
       },
-      { threshold: 0.2 }
+      { threshold: 0.15 }
     );
 
     const sections = document.querySelectorAll(".animated-section");
