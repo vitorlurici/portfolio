@@ -2,7 +2,7 @@ import { LogoIcon } from "../../assets/svg/LogoIcon";
 import { DownloadIcon } from "../../assets/svg/DownloadIcon";
 import { LanguageSelector } from "../LanguageSelector/LanguageSelector";
 import { useLanguage } from "../../hooks/useLanguage";
-import { Link, useNavigate, useLocation } from "react-router-dom"; // Importe useLocation
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { translations } from "../../translations/header/translations";
 import "./Header.scss";
 

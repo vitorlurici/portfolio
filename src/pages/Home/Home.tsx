@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Link, useOutletContext, useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { translations } from "../../translations/home/translations";
 import { useLanguage } from "../../hooks/useLanguage";
 import me from "../../assets/images/me.png";
@@ -25,13 +25,7 @@ import {
 } from "../../assets/svg";
 import useTitleUpdate from "../../hooks/useTitleUpdate";
 
-interface HomeContentProps {
-  isLoadingComplete: boolean;
-  resetApp: () => void;
-}
-
 export const Home = () => {
-  const { isLoadingComplete } = useOutletContext<HomeContentProps>();
   const projectsRef = useRef<HTMLDivElement | null>(null);
   const aboutMeRef = useRef<HTMLDivElement | null>(null);
   const [visibleSections, setVisibleSections] = useState<Set<string>>(
@@ -39,12 +33,6 @@ export const Home = () => {
   );
   const { language } = useLanguage();
   const location = useLocation();
-
-  useEffect(() => {
-    if (!isLoadingComplete) {
-      setVisibleSections(new Set());
-    }
-  }, [isLoadingComplete]);
 
   const scrollToProjects = () => {
     if (projectsRef.current) {
@@ -88,7 +76,7 @@ export const Home = () => {
   useTitleUpdate(translations[language].title);
 
   return (
-    <div className={`content ${!isLoadingComplete ? "hidden" : ""}`}>
+    <div className="content">
       <div
         id="introduction"
         className={`animated-section introduction ${

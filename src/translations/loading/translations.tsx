@@ -2,37 +2,45 @@ export const translations = {
   en: {
     mainLoading: {
       subTitle: "WELCOME",
-      Title: "Wait a bit",
+      title: "Wait a bit",
     },
     vetLinkLoading: {
       subTitle: "CASE STUDY",
-      Title: "VetLink",
+      title: "VetLink",
     },
     cosmosLoading: {
       subTitle: "CASE STUDY",
-      Title: "Cosmos",
+      title: "Cosmos",
     },
     financeLoading: {
       subTitle: "CASE STUDY",
-      Title: "Finance",
+      title: "Finance",
+    },
+    errorLoading: {
+      subTitle: "",
+      title: "",
     },
   },
   "pt-br": {
     mainLoading: {
       subTitle: "BEM-VINDO",
-      Title: "Aguarde um pouco",
+      title: "Aguarde um pouco",
     },
     vetLinkLoading: {
       subTitle: "ESTUDO DE CASO",
-      Title: "VetLink",
+      title: "VetLink",
     },
     cosmosLoading: {
       subTitle: "ESTUDO DE CASO",
-      Title: "Cosmos",
+      title: "Cosmos",
     },
     financeLoading: {
       subTitle: "ESTUDO DE CASO",
-      Title: "Finance",
+      title: "Finance",
+    },
+    errorLoading: {
+      subTitle: "",
+      title: "",
     },
   },
 };

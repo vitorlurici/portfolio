@@ -83,6 +83,10 @@
 .main-container {
   display: flex;
   flex-direction: column;
+
+  &.hidden {
+    display: none;
+  }
 }
 
 @media (max-width: 900px) {

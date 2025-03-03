@@ -1,28 +1,18 @@
-import { useOutletContext, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { projects } from "./projectsData";
 import { useLanguage } from "../../hooks/useLanguage";
 import "./Project.scss";
 import { techIcons } from "../../assets/svg";
 import { useEffect, useState } from "react";
 import useTitleUpdate from "../../hooks/useTitleUpdate";
-
-interface ProjectContentProps {
-  isLoadingComplete: boolean;
-}
+import Error from "../Error/Error";
 
 const ProjectDetails = () => {
-  const { isLoadingComplete } = useOutletContext<ProjectContentProps>();
   const { id } = useParams<{ id: string }>();
   const { language } = useLanguage();
   const [visibleSections, setVisibleSections] = useState<Set<string>>(
     new Set()
   );
-
-  useEffect(() => {
-    if (!isLoadingComplete) {
-      setVisibleSections(new Set());
-    }
-  }, [isLoadingComplete]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -47,13 +37,13 @@ const ProjectDetails = () => {
   const project = projects.find((p) => p.id === id);
 
   if (!project) {
-    return <div>Project not found</div>;
+    return <Error />;
   }
 
   useTitleUpdate(project.getTitle(language));
 
   return (
-    <div className={`project-main ${!isLoadingComplete ? "hidden" : ""}`}>
+    <div className="project-main">
       <div
         id="top-container"
         className={`animated-section top-container ${

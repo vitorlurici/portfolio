@@ -23,6 +23,8 @@ function App() {
       return translations[language].cosmosLoading;
     } else if (location.pathname.includes("/projects/finance")) {
       return translations[language].financeLoading;
+    } else if (location.pathname.includes("/404")) {
+      return translations[language].errorLoading;
     } else {
       return translations[language].mainLoading;
     }
@@ -81,11 +83,11 @@ function App() {
           </div>
           <div className="bottom">
             <p>{getLoadingTranslations().subTitle}</p>
-            <h1>{getLoadingTranslations().Title}</h1>
+            <h1>{getLoadingTranslations().title}</h1>
           </div>
         </div>
       )}
-      <main className="main-container">
+      <main className={`main-container ${!isLoadingComplete ? "hidden" : ""}`}>
         <Header resetApp={resetApp} />
         <Outlet context={{ isLoadingComplete, resetApp }} />
         <Footer resetApp={resetApp} />
