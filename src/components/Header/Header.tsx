@@ -6,7 +6,11 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 import { translations } from "../../translations/header/translations";
 import "./Header.scss";
 
-export const Header = () => {
+interface HeaderProps {
+  resetApp: () => void;
+}
+
+export const Header = ({ resetApp }: HeaderProps) => {
   const { language, setLanguage } = useLanguage();
   const navigate = useNavigate();
   const location = useLocation();
@@ -30,6 +34,7 @@ export const Header = () => {
     } else {
       navigate("/");
     }
+    resetApp();
   };
 
   return (

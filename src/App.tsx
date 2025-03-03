@@ -84,9 +84,9 @@ function App() {
         </div>
       )}
       <main className={`main-container ${!isLoadingComplete ? "hidden" : ""}`}>
-        <Header />
+        <Header resetApp={resetApp} />
         <Outlet />
-        <Footer />
+        <Footer resetApp={resetApp} />
         <ScrollUp />
       </main>
     </>

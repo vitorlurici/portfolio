@@ -4,21 +4,28 @@ import { useLanguage } from "../../hooks/useLanguage";
 import { translations } from "../../translations/footer/translations";
 import "./Footer.scss";
 
-export const Footer = () => {
+interface FooterProps {
+  resetApp: () => void;
+}
+
+export const Footer = ({ resetApp }: FooterProps) => {
   const { language } = useLanguage();
   const navigate = useNavigate();
 
   const handleLogoClick = () => {
     if (location.pathname.startsWith("/portfolio/pt")) {
       navigate("/pt");
+      resetApp();
     } else {
       navigate("/");
+      resetApp();
     }
   };
 
   const handleLinkClick = (path: string) => {
     const finalPath = buildLink(path);
     navigate(finalPath);
+    resetApp();
   };
 
   const buildLink = (path: string) => {
