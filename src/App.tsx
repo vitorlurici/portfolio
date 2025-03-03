@@ -1,22 +1,21 @@
-import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom"; // Importe useLocation
+import { useState, useEffect, useCallback } from "react";
+import { useLocation } from "react-router-dom";
 import "./App.scss";
 import { LogoIcon } from "./assets/svg/LogoIcon";
 import { Header } from "./components/Header/Header";
 import { Footer } from "./components/Footer/Footer";
 import { ScrollUp } from "./components/ScrollUpButton/ScrollUp";
-import { translations } from "./translations//loading/translations";
+import { translations } from "./translations/loading/translations";
 import { useLanguage } from "./hooks/useLanguage";
 import { Outlet } from "react-router-dom";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [isLoadingComplete, setIsLoadingComplete] = useState(false);
-  const [hasReset, setHasReset] = useState(false);
   const { language } = useLanguage();
   const location = useLocation();
 
-  const getLoadingTranslations = () => {
+  const getLoadingTranslations = useCallback(() => {
     if (location.pathname.includes("/projects/vetlink")) {
       return translations[language].vetLinkLoading;
     } else if (location.pathname.includes("/projects/cosmos")) {
@@ -28,9 +27,9 @@ function App() {
     } else {
       return translations[language].mainLoading;
     }
-  };
+  }, [language, location.pathname]);
 
-  const resetApp = () => {
+  const resetApp = useCallback(() => {
     setIsLoading(true);
     setIsLoadingComplete(false);
 
@@ -40,7 +39,7 @@ function App() {
         setIsLoading(false);
       }, 1000);
     }, 1000);
-  };
+  }, []);
 
   useEffect(() => {
     const handleLoad = () =>
@@ -63,13 +62,10 @@ function App() {
   }, []);
 
   useEffect(() => {
-    if (location.pathname.includes("/projects") && !hasReset) {
+    if (location.pathname.includes("/")) {
       resetApp();
-      setHasReset(true);
-    } else if (!location.pathname.includes("/projects")) {
-      setHasReset(false);
     }
-  }, [location.pathname, resetApp, hasReset]);
+  }, [location.pathname, resetApp]);
 
   return (
     <>
@@ -88,9 +84,9 @@ function App() {
         </div>
       )}
       <main className={`main-container ${!isLoadingComplete ? "hidden" : ""}`}>
-        <Header resetApp={resetApp} />
-        <Outlet context={{ isLoadingComplete, resetApp }} />
-        <Footer resetApp={resetApp} />
+        <Header />
+        <Outlet />
+        <Footer />
         <ScrollUp />
       </main>
     </>

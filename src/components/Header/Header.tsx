@@ -6,11 +6,7 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 import { translations } from "../../translations/header/translations";
 import "./Header.scss";
 
-interface HeaderProps {
-  resetApp: () => void;
-}
-
-export const Header = ({ resetApp }: HeaderProps) => {
+export const Header = () => {
   const { language, setLanguage } = useLanguage();
   const navigate = useNavigate();
   const location = useLocation();
@@ -34,7 +30,6 @@ export const Header = ({ resetApp }: HeaderProps) => {
     } else {
       navigate("/");
     }
-    resetApp();
   };
 
   return (
@@ -50,7 +45,6 @@ export const Header = ({ resetApp }: HeaderProps) => {
       </div>
       <div className="header-right">
         <LanguageSelector
-          resetApp={resetApp}
           language={language}
           setLanguage={handleLanguageChange}
         />
