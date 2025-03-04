@@ -12,22 +12,42 @@ export const useVisibleSections = (isLoadingComplete: boolean) => {
   }, [isLoadingComplete]);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setVisibleSections((prev) => new Set(prev).add(entry.target.id));
-          }
-        });
-      },
-      { threshold: 0.15 }
-    );
+    const handleScroll = () => {
+      const sections = document.querySelectorAll(".animated-section");
+      const newVisibleSections = new Set<string>();
 
-    const sections = document.querySelectorAll(".animated-section");
-    sections.forEach((section) => observer.observe(section));
+      sections.forEach((section) => {
+        const rect = section.getBoundingClientRect();
+        const sectionTop = rect.top;
+        const sectionBottom = rect.bottom;
+        const viewportHeight = window.innerHeight;
+
+        const isVisible =
+          sectionTop < viewportHeight - 100 && sectionBottom > 100;
+
+        if (isVisible) {
+          newVisibleSections.add(section.id);
+        }
+      });
+
+      setVisibleSections(newVisibleSections);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("load", handleScroll);
+
+    const timeoutId = setTimeout(handleScroll, 100);
+
+    const resizeObserver = new ResizeObserver(handleScroll);
+    document.querySelectorAll(".animated-section").forEach((section) => {
+      resizeObserver.observe(section);
+    });
 
     return () => {
-      sections.forEach((section) => observer.unobserve(section));
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("load", handleScroll);
+      clearTimeout(timeoutId);
+      resizeObserver.disconnect();
     };
   }, []);
 

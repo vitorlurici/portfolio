@@ -62,20 +62,18 @@ function App() {
   }, [location.pathname, resetApp]);
 
   return (
-    <>
+    <main className="main-container">
       {isLoading && (
         <LoadingScreen
           isLoadingComplete={isLoadingComplete}
           loadingText={getLoadingTranslations()}
         />
       )}
-      <main className="main-container">
-        <Header resetApp={resetApp} />
-        <Outlet context={{ isLoadingComplete, resetApp }} />
-        <Footer resetApp={resetApp} />
-        <ScrollUp />
-      </main>
-    </>
+      <Header resetApp={resetApp} />
+      <Outlet context={{ isLoadingComplete, resetApp }} />
+      <Footer resetApp={resetApp} />
+      <ScrollUp />
+    </main>
   );
 }
 
