@@ -8,17 +8,6 @@
   padding-bottom: 120px;
   gap: 120px;
 
-  .animated-section {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 2s ease, transform 1s ease;
-
-    &.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
   &.hidden {
     display: none;
   }
