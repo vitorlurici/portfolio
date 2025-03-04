@@ -1,17 +1,23 @@
-import { useState, useEffect, useCallback } from "react";
+import { useEffect, useCallback } from "react";
 import { useLocation } from "react-router-dom";
 import "./App.scss";
-import { LogoIcon } from "./assets/svg/LogoIcon";
 import { Header } from "./components/Header/Header";
 import { Footer } from "./components/Footer/Footer";
 import { ScrollUp } from "./components/ScrollUpButton/ScrollUp";
 import { translations } from "./translations/loading/translations";
 import { useLanguage } from "./hooks/useLanguage";
 import { Outlet } from "react-router-dom";
+import { LoadingScreen } from "./components/LoadingScreen/LoadingScreen";
+import { useLoading } from "./hooks/useLoading";
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true);
-  const [isLoadingComplete, setIsLoadingComplete] = useState(false);
+  const {
+    isLoading,
+    setIsLoading,
+    isLoadingComplete,
+    setIsLoadingComplete,
+    resetApp,
+  } = useLoading();
   const { language } = useLanguage();
   const location = useLocation();
 
@@ -28,18 +34,6 @@ function App() {
       return translations[language].mainLoading;
     }
   }, [language, location.pathname]);
-
-  const resetApp = useCallback(() => {
-    setIsLoading(true);
-    setIsLoadingComplete(false);
-
-    setTimeout(() => {
-      setIsLoadingComplete(true);
-      setTimeout(() => {
-        setIsLoading(false);
-      }, 1000);
-    }, 1000);
-  }, []);
 
   useEffect(() => {
     const handleLoad = () =>
@@ -59,7 +53,7 @@ function App() {
     return () => {
       window.onload = null;
     };
-  }, []);
+  }, [setIsLoading, setIsLoadingComplete]);
 
   useEffect(() => {
     if (location.pathname.includes("/")) {
@@ -70,22 +64,14 @@ function App() {
   return (
     <>
       {isLoading && (
-        <div
-          className={`loading-screen ${isLoadingComplete ? "slide-up" : ""}`}
-        >
-          <div className="logo-container">
-            <LogoIcon />
-            <div className="loading-spinner" />
-          </div>
-          <div className="bottom">
-            <p>{getLoadingTranslations().subTitle}</p>
-            <h1>{getLoadingTranslations().title}</h1>
-          </div>
-        </div>
+        <LoadingScreen
+          isLoadingComplete={isLoadingComplete}
+          loadingText={getLoadingTranslations()}
+        />
       )}
-      <main className={`main-container ${!isLoadingComplete ? "hidden" : ""}`}>
+      <main className="main-container">
         <Header resetApp={resetApp} />
-        <Outlet />
+        <Outlet context={{ isLoadingComplete, resetApp }} />
         <Footer resetApp={resetApp} />
         <ScrollUp />
       </main>
