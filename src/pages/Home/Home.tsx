@@ -84,7 +84,7 @@ export const Home = () => {
         </div>
       </AnimatedSection>
       <AnimatedSection id="projects" visibleSections={visibleSections}>
-        <div className="projects">
+        <div className="projects" ref={projectsRef}>
           <div className="title">
             <span>{translations[language].projectsSubTitle}</span>
             <h1>{translations[language].projectsTitle}</h1>
@@ -118,7 +118,7 @@ export const Home = () => {
         </div>
       </AnimatedSection>
       <AnimatedSection id="about-me" visibleSections={visibleSections}>
-        <div className="about-me">
+        <div className="about-me" ref={aboutMeRef}>
           <div className="title">
             <span>{translations[language].aboutMeSubTitle}</span>
             <h1>{translations[language].aboutMeTitle}</h1>

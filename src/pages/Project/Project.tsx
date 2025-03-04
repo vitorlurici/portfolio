@@ -1,5 +1,5 @@
 // ProjectDetails.tsx
-import { useOutletContext, useParams } from "react-router-dom";
+import { Link, useOutletContext, useParams } from "react-router-dom";
 import { projects } from "./projectsData";
 import { useLanguage } from "../../hooks/useLanguage";
 import "./Project.scss";
@@ -46,20 +46,20 @@ const ProjectDetails = () => {
             </div>
             <div className="item">
               <p>LINKS</p>
-              <a
-                href={project.githubLink}
+              <Link
+                to={project.githubLink}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {project.getViewGithubText(language)}
-              </a>
-              <a
-                href={project.projectLink}
+                <button>{project.getViewGithubText(language)}</button>
+              </Link>
+              <Link
+                to={project.projectLink}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {project.getViewProjectText(language)}
-              </a>
+                <button>{project.getViewProjectText(language)}</button>
+              </Link>
             </div>
             <div className="item">
               <p>{project.getProjectRole(language)}</p>
