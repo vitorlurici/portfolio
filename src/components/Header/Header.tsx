@@ -1,10 +1,10 @@
 import { LogoIcon } from "../../assets/svg/LogoIcon";
-import { DownloadIcon } from "../../assets/svg/DownloadIcon";
 import { LanguageSelector } from "../LanguageSelector/LanguageSelector";
 import { useLanguage } from "../../hooks/useLanguage";
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { translations } from "../../translations/header/translations";
 import "./Header.scss";
+import { MenuIcon } from "../../assets/svg/MenuIcon";
 
 interface HeaderProps {
   resetApp: () => void;
@@ -53,15 +53,10 @@ export const Header = ({ resetApp }: HeaderProps) => {
           language={language}
           setLanguage={handleLanguageChange}
         />
-        <Link
-          to="https://github.com/user-attachments/files/18648395/Vitor_Lurici_CV.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <button>
-            {translations[language].downloadCV} <DownloadIcon />
-          </button>
-        </Link>
+
+        <button>
+          <MenuIcon />
+        </button>
       </div>
     </header>
   );
