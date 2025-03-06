@@ -8,4 +8,74 @@
   overflow-y: scroll;
   align-items: center;
   justify-content: center;
+  .top-content {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 24px 40px 0px 40px;
+    display: flex;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    justify-content: space-between;
+
+    .logo {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      pointer-events: auto;
+      width: fit-content;
+
+      &:hover {
+        .logo-icon {
+          transition: 0.5s;
+          padding: 0;
+          padding-left: 4px;
+          padding-bottom: 4px;
+          fill: #fff;
+          stroke: #fff;
+        }
+        .logo-text {
+          span {
+            color: #fff;
+            transition: 0.5s;
+          }
+        }
+      }
+
+      .logo-icon {
+        width: 46px;
+        height: 46px;
+        transition: 0.5s;
+        fill: #ccc;
+        stroke: #ccc;
+      }
+
+      .logo-text {
+        display: flex;
+        flex-direction: column;
+
+        span {
+          color: #ccc;
+          transition: 0.5s;
+          text-align: center;
+        }
+
+        .name {
+          font-size: 20px;
+          font-weight: bold;
+          letter-spacing: 2px;
+        }
+
+        .description {
+          font-size: 12px;
+        }
+      }
+    }
+  }
 }
