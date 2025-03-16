@@ -53,10 +53,10 @@ export const Header = ({ resetApp }: HeaderProps) => {
           language={language}
           setLanguage={handleLanguageChange}
         />
-
-        <button>
+        <div className="menu">
+          <span>MENU</span>
           <MenuIcon />
-        </button>
+        </div>
       </div>
     </header>
   );

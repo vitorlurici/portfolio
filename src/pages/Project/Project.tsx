@@ -7,6 +7,7 @@ import { techIcons } from "../../assets/svg";
 import { useVisibleSections } from "../../hooks/useVisibleSections";
 import { AnimatedSection } from "../../components/AnimatedSection/AnimatedSection";
 import Error from "../Error/Error";
+import useTitleUpdate from "../../hooks/useTitleUpdate";
 
 interface ProjectContentProps {
   isLoadingComplete: boolean;
@@ -27,6 +28,7 @@ const ProjectDetails = () => {
       </div>
     );
   }
+  useTitleUpdate(project.getTitle(language));
 
   return (
     <div className={`project-main ${!isLoadingComplete ? "hidden" : ""}`}>

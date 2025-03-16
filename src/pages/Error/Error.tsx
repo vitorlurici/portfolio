@@ -5,6 +5,7 @@ import "./Error.scss";
 import { useVisibleSections } from "../../hooks/useVisibleSections";
 import { AnimatedSection } from "../../components/AnimatedSection/AnimatedSection";
 import { useEffect } from "react";
+import useTitleUpdate from "../../hooks/useTitleUpdate";
 
 interface ErrorProps {
   isLoadingComplete: boolean;
@@ -32,6 +33,8 @@ const Error = () => {
       navigate("/");
     }
   };
+
+  useTitleUpdate(translations[language].title);
 
   return (
     <div className={`error-container ${!isLoadingComplete ? "hidden" : ""}`}>
