@@ -1,10 +1,12 @@
+import { useState } from "react";
 import { LogoIcon } from "../../assets/svg/LogoIcon";
-import { LanguageSelector } from "../LanguageSelector/LanguageSelector";
+import { LanguageSelector } from "./LanguageSelector/LanguageSelector";
 import { useLanguage } from "../../hooks/useLanguage";
 import { useNavigate, useLocation } from "react-router-dom";
 import { translations } from "../../translations/header/translations";
 import "./Header.scss";
 import { MenuIcon } from "../../assets/svg/MenuIcon";
+import { SlideDownMenu } from "./Menu/Menu";
 
 interface HeaderProps {
   resetApp: () => void;
@@ -14,6 +16,7 @@ export const Header = ({ resetApp }: HeaderProps) => {
   const { language, setLanguage } = useLanguage();
   const navigate = useNavigate();
   const location = useLocation();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleLanguageChange = (lang: "en" | "pt-br") => {
     setLanguage(lang);
@@ -37,27 +40,34 @@ export const Header = ({ resetApp }: HeaderProps) => {
     resetApp();
   };
 
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
-    <header className="header-container">
-      <div className="logo" onClick={handleLogoClick}>
-        <LogoIcon />
-        <div className="logo-text">
-          <span className="name">Vitor Lurici</span>
-          <span className="description">
-            {translations[language].headerDescription}
-          </span>
+    <>
+      <header className="header-container">
+        <div className="logo" onClick={handleLogoClick}>
+          <LogoIcon />
+          <div className="logo-text">
+            <span className="name">Vitor Lurici</span>
+            <span className="description">
+              {translations[language].headerDescription}
+            </span>
+          </div>
         </div>
-      </div>
-      <div className="header-right">
-        <LanguageSelector
-          language={language}
-          setLanguage={handleLanguageChange}
-        />
-        <div className="menu">
-          <span>MENU</span>
-          <MenuIcon />
+        <div className="header-right">
+          <LanguageSelector
+            language={language}
+            setLanguage={handleLanguageChange}
+          />
+          <div className="menu" onClick={toggleMenu}>
+            <span>MENU</span>
+            <MenuIcon />
+          </div>
         </div>
-      </div>
-    </header>
+      </header>
+      <SlideDownMenu isOpen={isMenuOpen} onClose={toggleMenu} />
+    </>
   );
 };

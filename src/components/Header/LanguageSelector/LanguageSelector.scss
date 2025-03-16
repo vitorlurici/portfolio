@@ -108,3 +108,23 @@
     }
   }
 }
+
+@media (max-width: 420px) {
+  .language-selector {
+    .selected-language {
+      .flag-container {
+        width: 32px;
+        height: 32px;
+      }
+    }
+
+    .dropdown {
+      .dropdown-item {
+        .flag {
+          width: 28px;
+          height: 28px;
+        }
+      }
+    }
+  }
+}

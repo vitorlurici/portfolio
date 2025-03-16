@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./LanguageSelector.scss";
-import { ArrowDownIcon } from "../../assets/svg/ArrowDownIcon";
+import { ArrowDownIcon } from "../../../assets/svg/ArrowDownIcon";
 
 interface LanguageSelectorProps {
   language: "en" | "pt-br";

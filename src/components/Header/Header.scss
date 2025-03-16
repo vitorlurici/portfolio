@@ -39,8 +39,8 @@
     }
 
     .logo-icon {
-      width: 46px;
-      height: 46px;
+      width: 44px;
+      height: 44px;
       transition: 0.5s;
       fill: #678184;
       stroke: #678184;
@@ -150,11 +150,30 @@
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 440px) {
   .header-container {
     .logo {
+      .logo-icon {
+        width: 36px;
+        height: 36px;
+      }
       .logo-text {
-        display: none;
+        .name {
+          font-size: 16px;
+        }
+        .description {
+          font-size: 8px;
+        }
+      }
+    }
+    .header-right {
+      .menu {
+        svg {
+          width: 20px;
+        }
+        span {
+          display: none;
+        }
       }
     }
   }
