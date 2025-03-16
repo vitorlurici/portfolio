@@ -1,8 +1,10 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { LogoIcon } from "../../assets/svg/LogoIcon";
 import { useLanguage } from "../../hooks/useLanguage";
 import { translations } from "../../translations/footer/translations";
 import "./Footer.scss";
+import { useNavigation } from "../../hooks/useNavigation";
+import { useLogoNavigation } from "../../hooks/useLogoNavigation";
 
 interface FooterProps {
   resetApp: () => void;
@@ -10,30 +12,8 @@ interface FooterProps {
 
 export const Footer = ({ resetApp }: FooterProps) => {
   const { language } = useLanguage();
-  const navigate = useNavigate();
-
-  const handleLogoClick = () => {
-    if (location.pathname.startsWith("/portfolio/pt")) {
-      navigate("/pt");
-      resetApp();
-    } else {
-      navigate("/");
-      resetApp();
-    }
-  };
-
-  const handleLinkClick = (path: string) => {
-    const finalPath = buildLink(path);
-    navigate(finalPath);
-    resetApp();
-  };
-
-  const buildLink = (path: string) => {
-    if (location.pathname.startsWith("/portfolio/pt")) {
-      return `/pt${path}`;
-    }
-    return path;
-  };
+  const { buildLink, handleLinkClick } = useNavigation(resetApp);
+  const { handleLogoClick } = useLogoNavigation(resetApp);
 
   return (
     <footer>

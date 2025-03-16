@@ -7,6 +7,7 @@ import { translations } from "../../translations/header/translations";
 import "./Header.scss";
 import { MenuIcon } from "../../assets/svg/MenuIcon";
 import { SlideDownMenu } from "./Menu/Menu";
+import { useLogoNavigation } from "../../hooks/useLogoNavigation";
 
 interface HeaderProps {
   resetApp: () => void;
@@ -17,6 +18,7 @@ export const Header = ({ resetApp }: HeaderProps) => {
   const navigate = useNavigate();
   const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { handleLogoClick } = useLogoNavigation(resetApp);
 
   const handleLanguageChange = (lang: "en" | "pt-br") => {
     setLanguage(lang);
@@ -29,15 +31,6 @@ export const Header = ({ resetApp }: HeaderProps) => {
     const newPrefix = lang === "pt-br" ? "/pt" : "/";
 
     navigate(`${newPrefix}${routeWithoutPrefix}`);
-  };
-
-  const handleLogoClick = () => {
-    if (location.pathname.startsWith("/pt")) {
-      navigate("/pt");
-    } else {
-      navigate("/");
-    }
-    resetApp();
   };
 
   const toggleMenu = () => {
@@ -67,7 +60,11 @@ export const Header = ({ resetApp }: HeaderProps) => {
           </div>
         </div>
       </header>
-      <SlideDownMenu isOpen={isMenuOpen} onClose={toggleMenu} />
+      <SlideDownMenu
+        resetApp={resetApp}
+        isOpen={isMenuOpen}
+        onClose={toggleMenu}
+      />
     </>
   );
 };
