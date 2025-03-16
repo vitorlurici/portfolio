@@ -4,7 +4,6 @@ import { CloseIcon } from "../../../assets/svg/CloseIcon";
 import { Link } from "react-router-dom";
 import { useLanguage } from "../../../hooks/useLanguage";
 import { translations } from "../../../translations/menu/translations";
-import { DownloadIcon } from "../../../assets/svg/DownloadIcon";
 import { useNavigation } from "../../../hooks/useNavigation";
 
 interface MenuProps {
@@ -37,15 +36,6 @@ export const SlideDownMenu = ({ isOpen, onClose, resetApp }: MenuProps) => {
   return (
     <div className={`slide-down-menu ${isOpen ? "open" : ""}`} ref={menuRef}>
       <div className="top-content">
-        <Link
-          to="https://github.com/user-attachments/files/18648395/Vitor_Lurici_CV.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <button>
-            {translations[language].downloadCV} <DownloadIcon />
-          </button>
-        </Link>
         <div className="close-menu" onClick={onClose}>
           <span>{translations[language].close}</span>
           <CloseIcon />
@@ -55,15 +45,37 @@ export const SlideDownMenu = ({ isOpen, onClose, resetApp }: MenuProps) => {
         <span>MENU</span>
         <ul>
           <li>
-            <h1 onClick={() => handleLinkClick("/")}>
-              {translations[language].projects}
-            </h1>
+            <Link
+              to={buildLink("/")}
+              onClick={() => {
+                handleLinkClick("/");
+                onClose();
+              }}
+            >
+              <h1>{translations[language].projects}</h1>
+            </Link>
           </li>
           <li>
-            <h1>{translations[language].aboutMe}</h1>
+            <Link
+              to={buildLink("/about")}
+              onClick={() => {
+                handleLinkClick("/about");
+                onClose();
+              }}
+            >
+              <h1>{translations[language].aboutMe}</h1>
+            </Link>
           </li>
           <li>
-            <h1>{translations[language].contact}</h1>
+            <Link
+              to={buildLink("/contact")}
+              onClick={() => {
+                handleLinkClick("/contact");
+                onClose();
+              }}
+            >
+              <h1>{translations[language].contact}</h1>
+            </Link>
           </li>
           <li>
             <Link
