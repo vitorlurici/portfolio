@@ -91,6 +91,14 @@ export const Home = () => {
           </div>
         </div>
       </AnimatedSection>
+      <AnimatedSection id="contact-link" visibleSections={visibleSections}>
+        <div className="contact-link">
+          <p>{translations[language].need}</p>
+          <Link to={buildLink("/contact")}>
+            <h1>{translations[language].letsWork}</h1>
+          </Link>
+        </div>
+      </AnimatedSection>
     </div>
   );
 };

@@ -17,6 +17,8 @@ export const translations = {
       "A captivating space exploration Website utilizing NASA APIs, Google Translate, and Spaceflight News API.",
     financeDescription:
       "A personal finance management application currently under development. It enables users to track and manage their income and expenses efficiently.",
+    need: "NEED A SOFTWARE ENGINEER?",
+    letsWork: "Lets work together",
   },
   "pt-br": {
     title: "Portfólio | Vitor Lurici - Engenheiro de Software",
@@ -36,5 +38,7 @@ export const translations = {
       "Website de exploração espacial cativante que utiliza NASA APIs, Google Translate, e Spaceflight News API.",
     financeDescription:
       "Aplicação de gerenciamento financeiro atualmente em desenvolvimento. Permite usuários acompanhar e gerenciar suas receitas e despesas eficientemente.",
+    need: "PRECISA DE UM ENGENHEIRO DE SOFTWARE?",
+    letsWork: "Vamos trabalhar juntos",
   },
 };
