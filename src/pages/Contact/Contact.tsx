@@ -21,7 +21,6 @@ export const Contact = () => {
     message: "",
   });
   const messageTextareaRef = useRef<HTMLTextAreaElement>(null);
-
   const [showPopup, setShowPopup] = useState(false);
   const [isCaptchaVerified, setIsCaptchaVerified] = useState(false);
   const recaptchaRef = useRef<ReCAPTCHA>(null);
@@ -149,13 +148,13 @@ export const Contact = () => {
                   required
                 />
               </div>
-
-              <ReCAPTCHA
-                ref={recaptchaRef}
-                sitekey="6LfHqPYqAAAAAOdazYg65LqwdlSWXK4iilaw4ekZ"
-                onChange={handleCaptchaChange}
-              />
-
+              <div className="recaptcha-wrapper">
+                <ReCAPTCHA
+                  ref={recaptchaRef}
+                  sitekey="6LfHqPYqAAAAAOdazYg65LqwdlSWXK4iilaw4ekZ"
+                  onChange={handleCaptchaChange}
+                />
+              </div>
               <button type="submit" disabled={!isCaptchaVerified}>
                 Send Message
               </button>
