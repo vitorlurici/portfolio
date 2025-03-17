@@ -3,14 +3,17 @@
   flex-direction: column;
   width: 100%;
   max-width: 1360px;
-  padding-bottom: 120px;
   align-self: center;
+  padding-block: 120px;
+
+  &.hidden {
+    display: none;
+  }
 
   .content {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    padding-block: 120px;
     width: 100%;
     gap: 40px;
     text-align: center;
@@ -49,9 +52,5 @@
         }
       }
     }
-  }
-
-  &.hidden {
-    display: none;
   }
 }

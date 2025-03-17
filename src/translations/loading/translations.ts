@@ -18,7 +18,7 @@ export const translations = {
     },
     aboutLoading: {
       subTitle: "ABOUT ME",
-      title: "Software Engineer",
+      title: "Vitor Lurici",
     },
     contactLoading: {
       subTitle: "CONTACT",
@@ -48,7 +48,7 @@ export const translations = {
     },
     aboutLoading: {
       subTitle: "SOBRE MIM",
-      title: "Engenheiro de Software",
+      title: "Vitor Lurici",
     },
     contactLoading: {
       subTitle: "CONTATO",

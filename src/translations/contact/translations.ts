@@ -1,4 +1,4 @@
 export const translations = {
-  en: {},
-  "pt-br": {},
+  en: { title: "Contact | Vitor Lurici - Software Engineer" },
+  "pt-br": { title: "Contato | Vitor Lurici - Software Engineer" },
 };
