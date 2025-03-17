@@ -20,12 +20,20 @@ export const Contact = () => {
     email: "",
     message: "",
   });
+  const messageTextareaRef = useRef<HTMLTextAreaElement>(null);
 
   const [showPopup, setShowPopup] = useState(false);
   const [isCaptchaVerified, setIsCaptchaVerified] = useState(false);
   const recaptchaRef = useRef<ReCAPTCHA>(null);
   const { language } = useLanguage();
   const visibleSections = useVisibleSections(isLoadingComplete);
+
+  const adjustTextareaHeight = (textarea: HTMLTextAreaElement | null) => {
+    if (textarea) {
+      textarea.style.height = "auto";
+      textarea.style.height = `${textarea.scrollHeight}px`;
+    }
+  };
 
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -35,8 +43,11 @@ export const Contact = () => {
       ...formData,
       [name]: value,
     });
-  };
 
+    if (name === "message" && messageTextareaRef.current) {
+      adjustTextareaHeight(messageTextareaRef.current);
+    }
+  };
   const handleCaptchaChange = (value: string | null) => {
     if (value) {
       setIsCaptchaVerified(true);
@@ -98,37 +109,43 @@ export const Contact = () => {
           </div>
 
           <div className="right-content">
-            {" "}
             <form onSubmit={handleSubmit}>
               <div className="form-group">
                 <label htmlFor="name">Your Name</label>
                 <input
+                  placeholder="What's your name?"
                   type="text"
                   id="name"
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
+                  maxLength={50}
                   required
                 />
               </div>
               <div className="form-group">
                 <label htmlFor="email">Your Email</label>
                 <input
+                  placeholder="What's your email adress?"
                   type="email"
                   id="email"
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
+                  maxLength={50}
                   required
                 />
               </div>
               <div className="form-group">
                 <label htmlFor="message">Message</label>
                 <textarea
+                  ref={messageTextareaRef}
+                  placeholder="What's your message?"
                   id="message"
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
+                  rows={1}
                   required
                 />
               </div>
