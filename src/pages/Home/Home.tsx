@@ -7,6 +7,7 @@ import "./Home.scss";
 import useTitleUpdate from "../../hooks/useTitleUpdate";
 import { useVisibleSections } from "../../hooks/useVisibleSections";
 import { AnimatedSection } from "../../components/AnimatedSection/AnimatedSection";
+import { RightArrowIcon } from "../../assets/svg/RightArrowIcon";
 
 interface HomeProps {
   isLoadingComplete: boolean;
@@ -96,6 +97,7 @@ export const Home = () => {
           <p>{translations[language].need}</p>
           <Link to={buildLink("/contact")}>
             <h1>{translations[language].letsWork}</h1>
+            <RightArrowIcon />
           </Link>
         </div>
       </AnimatedSection>

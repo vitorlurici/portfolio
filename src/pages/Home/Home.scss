@@ -110,6 +110,26 @@
     p {
       letter-spacing: 2px;
     }
+
+    a {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      transition: box-shadow 0.3s ease;
+
+      &:hover {
+        box-shadow: 0 2px 0 0 #678184;
+      }
+
+      svg {
+        width: 40px;
+        height: 40px;
+
+        path {
+          stroke: #678184;
+        }
+      }
+    }
   }
 }
 
