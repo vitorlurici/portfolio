@@ -47,6 +47,7 @@ export const Contact = () => {
       adjustTextareaHeight(messageTextareaRef.current);
     }
   };
+
   const handleCaptchaChange = (value: string | null) => {
     if (value) {
       setIsCaptchaVerified(true);
@@ -57,7 +58,7 @@ export const Contact = () => {
     e.preventDefault();
 
     if (!isCaptchaVerified) {
-      alert("Por favor, complete o reCAPTCHA.");
+      alert(translations[language].completeCaptcha); // Tradução para o alerta do reCAPTCHA
       return;
     }
 
@@ -82,11 +83,11 @@ export const Contact = () => {
           recaptchaRef.current.reset();
         }
       } else {
-        alert("Erro ao enviar a mensagem. Tente novamente.");
+        alert(translations[language].errorSendingMessage);
       }
     } catch (error) {
       console.error("Erro ao enviar o formulário:", error);
-      alert("Erro ao enviar a mensagem. Tente novamente.");
+      alert(translations[language].errorSendingMessage);
     }
   };
 
@@ -98,21 +99,18 @@ export const Contact = () => {
         <div className="content">
           <div className="left-content">
             <div className="title">
-              <span>CONTACT</span>
-              <h1>Let’s work together</h1>
+              <span>{translations[language].contact}</span>
+              <h1>{translations[language].letsWork}</h1>
             </div>
-            <p>
-              Got a project? Drop me a line if you want to work together on
-              something exciting. Big or small. Mobile or web.
-            </p>
+            <p>{translations[language].gotProject}</p>
           </div>
 
           <div className="right-content">
             <form onSubmit={handleSubmit}>
               <div className="form-group">
-                <label htmlFor="name">Your Name</label>
+                <label htmlFor="name">{translations[language].name}</label>
                 <input
-                  placeholder="What's your name?"
+                  placeholder={translations[language].whatName}
                   type="text"
                   id="name"
                   name="name"
@@ -123,9 +121,9 @@ export const Contact = () => {
                 />
               </div>
               <div className="form-group">
-                <label htmlFor="email">Your Email</label>
+                <label htmlFor="email">{translations[language].email}</label>
                 <input
-                  placeholder="What's your email adress?"
+                  placeholder={translations[language].whatEmail}
                   type="email"
                   id="email"
                   name="email"
@@ -136,10 +134,12 @@ export const Contact = () => {
                 />
               </div>
               <div className="form-group">
-                <label htmlFor="message">Message</label>
+                <label htmlFor="message">
+                  {translations[language].message}
+                </label>
                 <textarea
                   ref={messageTextareaRef}
-                  placeholder="What's your message?"
+                  placeholder={translations[language].whatMessage}
                   id="message"
                   name="message"
                   value={formData.message}
@@ -156,7 +156,7 @@ export const Contact = () => {
                 />
               </div>
               <button type="submit" disabled={!isCaptchaVerified}>
-                Send Message
+                {translations[language].sendMessage}
               </button>
             </form>
           </div>
@@ -168,9 +168,9 @@ export const Contact = () => {
                   className="close-popup"
                   onClick={() => setShowPopup(false)}
                 >
-                  <span>FECHAR</span> <CloseIcon />
+                  <span>{translations[language].close}</span> <CloseIcon />
                 </div>
-                <p>Mensagem enviada com sucesso!</p>
+                <p>{translations[language].messageSent}</p>
               </div>
             </div>
           )}
