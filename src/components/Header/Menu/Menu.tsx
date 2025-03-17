@@ -57,9 +57,9 @@ export const SlideDownMenu = ({ isOpen, onClose, resetApp }: MenuProps) => {
           </li>
           <li>
             <Link
-              to={buildLink("/about")}
+              to={buildLink("/about-me")}
               onClick={() => {
-                handleLinkClick("/about");
+                handleLinkClick("/about-me");
                 onClose();
               }}
             >

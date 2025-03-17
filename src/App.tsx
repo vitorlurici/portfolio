@@ -28,6 +28,10 @@ function App() {
       return translations[language].cosmosLoading;
     } else if (location.pathname.includes("/projects/finance")) {
       return translations[language].financeLoading;
+    } else if (location.pathname.includes("about-me")) {
+      return translations[language].aboutLoading;
+    } else if (location.pathname.includes("contact")) {
+      return translations[language].contactLoading;
     } else if (location.pathname.includes("/404")) {
       return translations[language].errorLoading;
     } else {

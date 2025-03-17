@@ -5,6 +5,7 @@
   max-width: 1360px;
   align-self: center;
   align-items: center;
+  padding-bottom: 120px;
 
   &.hidden {
     display: none;
@@ -96,45 +97,6 @@
       }
       .item.finance {
         background-image: url(../../assets/images/finance-background.jpg);
-      }
-    }
-  }
-
-  .about-me {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    padding-block: 120px;
-    width: 100%;
-    gap: 80px;
-
-    a {
-      width: fit-content;
-    }
-
-    .title {
-      span {
-        font-size: 12px;
-        letter-spacing: 4px;
-      }
-    }
-
-    .skills {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-
-      .logos {
-        display: flex;
-        flex-wrap: wrap;
-        width: 100%;
-        justify-content: space-between;
-        gap: 20px;
-
-        svg {
-          width: 40px;
-          height: 40px;
-        }
       }
     }
   }

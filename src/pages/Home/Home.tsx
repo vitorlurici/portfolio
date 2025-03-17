@@ -4,25 +4,6 @@ import { translations } from "../../translations/home/translations";
 import { useLanguage } from "../../hooks/useLanguage";
 import me from "../../assets/images/me.png";
 import "./Home.scss";
-import {
-  HtmlIcon,
-  CssIcon,
-  SassIcon,
-  JsIcon,
-  TsIcon,
-  ReactIcon,
-  AngularIcon,
-  FlutterIcon,
-  JavaIcon,
-  PythonIcon,
-  NodeIcon,
-  MysqlIcon,
-  SqliteIcon,
-  FirebaseIcon,
-  FigmaIcon,
-  TrelloIcon,
-  JiraIcon,
-} from "../../assets/svg";
 import useTitleUpdate from "../../hooks/useTitleUpdate";
 import { useVisibleSections } from "../../hooks/useVisibleSections";
 import { AnimatedSection } from "../../components/AnimatedSection/AnimatedSection";
@@ -34,7 +15,6 @@ interface HomeProps {
 export const Home = () => {
   const { isLoadingComplete } = useOutletContext<HomeProps>();
   const projectsRef = useRef<HTMLDivElement | null>(null);
-  const aboutMeRef = useRef<HTMLDivElement | null>(null);
   const visibleSections = useVisibleSections(isLoadingComplete);
   const { language } = useLanguage();
   const location = useLocation();
@@ -42,12 +22,6 @@ export const Home = () => {
   const scrollToProjects = () => {
     if (projectsRef.current) {
       projectsRef.current.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
-  const scrollToAboutMe = () => {
-    if (aboutMeRef.current) {
-      aboutMeRef.current.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -73,9 +47,9 @@ export const Home = () => {
                 {translations[language].viewProjects}
               </button>
               <p>{translations[language].or}</p>
-              <button onClick={scrollToAboutMe}>
-                {translations[language].readAboutMe}
-              </button>
+              <Link to={buildLink("/about-me")}>
+                <button>{translations[language].readAboutMe}</button>{" "}
+              </Link>
             </div>
           </div>
           <div className="content-right">
@@ -114,37 +88,6 @@ export const Home = () => {
                 <p className="view-git">{translations[language].viewGithub}</p>
               </div>
             </Link>
-          </div>
-        </div>
-      </AnimatedSection>
-      <AnimatedSection id="about-me" visibleSections={visibleSections}>
-        <div className="about-me" ref={aboutMeRef}>
-          <div className="title">
-            <span>{translations[language].aboutMeSubTitle}</span>
-            <h1>{translations[language].aboutMeTitle}</h1>
-          </div>
-          <h3>{translations[language].aboutMeDescription}</h3>
-          <div className="skills">
-            <h2>{translations[language].techSkills}</h2>
-            <div className="logos">
-              <HtmlIcon />
-              <CssIcon />
-              <SassIcon />
-              <JsIcon />
-              <TsIcon />
-              <ReactIcon />
-              <AngularIcon />
-              <FlutterIcon />
-              <JavaIcon />
-              <PythonIcon />
-              <NodeIcon />
-              <MysqlIcon />
-              <SqliteIcon />
-              <FirebaseIcon />
-              <FigmaIcon />
-              <TrelloIcon />
-              <JiraIcon />
-            </div>
           </div>
         </div>
       </AnimatedSection>

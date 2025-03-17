@@ -16,6 +16,14 @@ export const translations = {
       subTitle: "CASE STUDY",
       title: "Finance",
     },
+    aboutLoading: {
+      subTitle: "ABOUT ME",
+      title: "Software Engineer",
+    },
+    contactLoading: {
+      subTitle: "CONTACT",
+      title: "Get in touch",
+    },
     errorLoading: {
       subTitle: "",
       title: "",
@@ -37,6 +45,14 @@ export const translations = {
     financeLoading: {
       subTitle: "ESTUDO DE CASO",
       title: "Finance",
+    },
+    aboutLoading: {
+      subTitle: "SOBRE MIM",
+      title: "Engenheiro de Software",
+    },
+    contactLoading: {
+      subTitle: "CONTATO",
+      title: "Entre em contato",
     },
     errorLoading: {
       subTitle: "",
