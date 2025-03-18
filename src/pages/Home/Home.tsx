@@ -96,8 +96,10 @@ export const Home = () => {
         <div className="contact-link">
           <p>{translations[language].need}</p>
           <Link to={buildLink("/contact")}>
-            <h1>{translations[language].letsWork}</h1>
-            <RightArrowIcon />
+            <div className="link">
+              <h1>{translations[language].letsWork}</h1>
+              <RightArrowIcon />
+            </div>
           </Link>
         </div>
       </AnimatedSection>

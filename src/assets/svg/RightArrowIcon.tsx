@@ -1,19 +1,13 @@
 export const RightArrowIcon = () => {
   return (
     <svg
+      fill="#000000"
       width="800px"
       height="800px"
-      viewBox="0 0 24 16"
-      fill="none"
+      viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <path
-        d="M6 12H18M18 12L13 7M18 12L13 17"
-        stroke="#000000"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      />
+      <path d="M20.707 11.293L15.05 5.636a1 1 0 0 0-1.414 1.414l3.95 3.95H4a1 1 0 0 0 0 2h13.586l-3.95 3.95a1 1 0 1 0 1.414 1.414l5.657-5.657a1 1 0 0 0 0-1.414z" />
     </svg>
   );
 };
