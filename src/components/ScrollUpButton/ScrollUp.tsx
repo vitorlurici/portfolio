@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./ScrollUp.scss";
+import { UpArrowIcon } from "../../assets/svg/UpArrowIcon";
 
 export const ScrollUp = () => {
   const [showScrollUp, setShowScrollUp] = useState(false);
@@ -28,7 +29,7 @@ export const ScrollUp = () => {
       className={`scroll-up ${showScrollUp ? "visible" : "hidden"}`}
       onClick={scrollToTop}
     >
-      ↑
+      <UpArrowIcon />
     </button>
   );
 };

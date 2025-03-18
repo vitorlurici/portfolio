@@ -5,14 +5,20 @@
   transition: 0.3s ease;
 
   &.visible {
-    width: 50px;
-    height: 50px;
-    font-size: 24px;
     opacity: 0.5;
     transform: translateY(0);
     pointer-events: all;
-    color: #678184;
+    border-radius: 50%;
     background-color: #cccccc;
+    padding: 8px;
+    svg {
+      width: 36px;
+      height: 36px;
+
+      path {
+        stroke: #678184;
+      }
+    }
 
     &:hover {
       background-color: #fff;
@@ -21,12 +27,19 @@
   }
 
   &.hidden {
-    color: #678184;
-    background-color: #cccccc;
-    width: 50px;
-    height: 50px;
     opacity: 0;
     transform: translateY(20px);
     pointer-events: none;
+    border-radius: 50%;
+    padding: 8px;
+
+    svg {
+      width: 36px;
+      height: 36px;
+
+      path {
+        stroke: #678184;
+      }
+    }
   }
 }
