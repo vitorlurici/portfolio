@@ -4,10 +4,16 @@ import "./Contact.scss";
 import useTitleUpdate from "../../hooks/useTitleUpdate";
 import { translations } from "../../translations/contact/translations";
 import { useLanguage } from "../../hooks/useLanguage";
-import { useOutletContext } from "react-router-dom";
+import { Link, useOutletContext } from "react-router-dom";
 import { useVisibleSections } from "../../hooks/useVisibleSections";
 import { AnimatedSection } from "../../components/AnimatedSection/AnimatedSection";
 import { CloseIcon } from "../../assets/svg/CloseIcon";
+import { MessageIcon } from "../../assets/svg/MessageIcon";
+import { EmailIcon } from "../../assets/svg/EmailIcon";
+import { WhatsAppIcon } from "../../assets/svg/WhatsAppIcon";
+import { LinkedinIcon } from "../../assets/svg/LinkedinIcon";
+import { GithubIcon } from "../../assets/svg/GithubIcon";
+import { InstagramIcon } from "../../assets/svg/InstagramIcon";
 
 interface ContactProps {
   isLoadingComplete: boolean;
@@ -219,6 +225,43 @@ export const Contact = () => {
               <h1>{translations[language].letsWork}</h1>
             </div>
             <p>{translations[language].gotProject}</p>
+            <div className="socials">
+              <Link
+                to="https://www.linkedin.com/in/vitor-lurici-0911b1303/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <LinkedinIcon />
+              </Link>
+              <Link
+                to="https://github.com/vitorlurici"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <GithubIcon />
+              </Link>
+              <Link
+                to="https://www.instagram.com/vitorlmoraes/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <InstagramIcon />
+              </Link>
+              <Link
+                to="https://wa.me/5514996825293"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <WhatsAppIcon />
+              </Link>
+              <Link
+                to="mailto:vitorluricii@hotmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <EmailIcon />{" "}
+              </Link>
+            </div>
           </div>
 
           <div className="right-content">
@@ -284,7 +327,7 @@ export const Contact = () => {
                 />
               </div>
               <button type="submit" disabled={!isCaptchaVerified}>
-                {translations[language].sendMessage}
+                {translations[language].sendMessage} <MessageIcon />
               </button>
             </form>
           </div>
