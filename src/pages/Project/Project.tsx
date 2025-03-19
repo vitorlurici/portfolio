@@ -8,6 +8,7 @@ import { useVisibleSections } from "../../hooks/useVisibleSections";
 import { AnimatedSection } from "../../components/AnimatedSection/AnimatedSection";
 import Error from "../Error/Error";
 import useTitleUpdate from "../../hooks/useTitleUpdate";
+import { ImageLoader } from "../../components/ImageLoader/ImageLoader";
 
 interface ProjectContentProps {
   isLoadingComplete: boolean;
@@ -90,11 +91,15 @@ const ProjectDetails = () => {
       <AnimatedSection id="project-images" visibleSections={visibleSections}>
         <div className="project-images">
           {project.images.map((img, index) => (
-            <img key={index} src={img} alt={`Screenshot of ${project.title}`} />
+            <ImageLoader
+              key={index}
+              src={img}
+              alt={`Screenshot of ${project.title}`}
+            />
           ))}
           <div className="mobile">
             {project.mobileImages.map((img, index) => (
-              <img
+              <ImageLoader
                 key={index}
                 src={img}
                 alt={`Screenshot of ${project.title}`}

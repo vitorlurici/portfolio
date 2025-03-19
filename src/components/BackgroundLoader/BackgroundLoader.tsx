@@ -29,7 +29,7 @@ export const BackgroundLoader: React.FC<BackgroundLoaderProps> = ({
   }, [imageUrl]);
 
   return (
-    <div className="background-content">
+    <div className="background-loader">
       {isLoading && (
         <div className="logo-container">
           <LogoIcon />
@@ -37,7 +37,7 @@ export const BackgroundLoader: React.FC<BackgroundLoaderProps> = ({
         </div>
       )}
       <div
-        className={`background-loader ${className}`}
+        className={`${className}`}
         style={{
           backgroundImage: isLoading ? "none" : `url(${imageUrl})`,
           opacity: isLoading ? 0 : 1,

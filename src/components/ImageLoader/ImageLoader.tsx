@@ -20,7 +20,7 @@ export const ImageLoader: React.FC<ImageLoaderProps> = ({
   };
 
   return (
-    <>
+    <div className="image-loader">
       {isLoading && (
         <div className="logo-container">
           <LogoIcon />
@@ -33,7 +33,7 @@ export const ImageLoader: React.FC<ImageLoaderProps> = ({
         className={`${className} ${isLoading ? "hidden" : ""}`}
         onLoad={handleImageLoad}
         onError={() => setIsLoading(false)}
-      />
-    </>
+      />{" "}
+    </div>
   );
 };
