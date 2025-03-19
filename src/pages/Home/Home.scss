@@ -80,12 +80,10 @@
 
         &:hover {
           background-position: right bottom;
-          transition: 0.5s;
           background-color: #678184;
 
           .view-git {
             margin-top: 20px;
-            transition: 0.5s;
             opacity: 100;
           }
         }

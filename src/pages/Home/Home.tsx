@@ -3,6 +3,9 @@ import { Link, useLocation, useOutletContext } from "react-router-dom";
 import { translations } from "../../translations/home/translations";
 import { useLanguage } from "../../hooks/useLanguage";
 import me from "../../assets/images/me.png";
+import vetlinkBackground from "../../assets/images/vetlink-background.jpg";
+import cosmosBackground from "../../assets/images/cosmos-background.jpg";
+import financeBackground from "../../assets/images/finance-background.jpg";
 import "./Home.scss";
 import useTitleUpdate from "../../hooks/useTitleUpdate";
 import { useVisibleSections } from "../../hooks/useVisibleSections";
@@ -69,7 +72,7 @@ export const Home = () => {
           <div className="grid">
             <Link to={buildLink("/projects/vetlink")}>
               <BackgroundLoader
-                imageUrl="/portfolio/src/assets/images/vetlink-background.jpg"
+                imageUrl={vetlinkBackground}
                 className="item vetlink"
               >
                 <p>2024</p>
@@ -80,7 +83,7 @@ export const Home = () => {
             </Link>
             <Link to={buildLink("/projects/cosmos")}>
               <BackgroundLoader
-                imageUrl="/portfolio/src/assets/images/cosmos-background.jpg"
+                imageUrl={cosmosBackground}
                 className="item cosmos"
               >
                 <p>2024</p>
@@ -91,7 +94,7 @@ export const Home = () => {
             </Link>
             <Link to={buildLink("/projects/finance")}>
               <BackgroundLoader
-                imageUrl="/portfolio/src/assets/images/finance-background.jpg"
+                imageUrl={financeBackground}
                 className="item finance"
               >
                 <p>2023 - {translations[language].inProgress}</p>

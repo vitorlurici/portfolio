@@ -41,7 +41,6 @@ export const BackgroundLoader: React.FC<BackgroundLoaderProps> = ({
         style={{
           backgroundImage: isLoading ? "none" : `url(${imageUrl})`,
           opacity: isLoading ? 0 : 1,
-          transition: "opacity 0.5s ease-in-out",
         }}
       >
         {children}
