@@ -29,19 +29,23 @@ export const BackgroundLoader: React.FC<BackgroundLoaderProps> = ({
   }, [imageUrl]);
 
   return (
-    <div
-      className={`background-loader ${className}`}
-      style={{
-        backgroundImage: isLoading ? "none" : `url(${imageUrl})`,
-      }}
-    >
+    <div className="background-content">
       {isLoading && (
         <div className="logo-container">
           <LogoIcon />
           <div className="loading-spinner" />
         </div>
       )}
-      {!isLoading && children}
+      <div
+        className={`background-loader ${className}`}
+        style={{
+          backgroundImage: isLoading ? "none" : `url(${imageUrl})`,
+          opacity: isLoading ? 0 : 1,
+          transition: "opacity 0.5s ease-in-out",
+        }}
+      >
+        {children}
+      </div>
     </div>
   );
 };
