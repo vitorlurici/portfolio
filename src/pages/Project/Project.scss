@@ -61,14 +61,14 @@
     flex-direction: column;
     gap: 80px;
 
+    img {
+      width: 100%;
+    }
+
     .mobile {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 20px;
-
-      img {
-        width: 100%;
-      }
     }
   }
 }

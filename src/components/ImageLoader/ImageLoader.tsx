@@ -33,7 +33,7 @@ export const ImageLoader: React.FC<ImageLoaderProps> = ({
         className={`${className} ${isLoading ? "hidden" : ""}`}
         onLoad={handleImageLoad}
         onError={() => setIsLoading(false)}
-      />{" "}
+      />
     </div>
   );
 };
