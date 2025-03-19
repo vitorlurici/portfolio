@@ -8,6 +8,8 @@ import useTitleUpdate from "../../hooks/useTitleUpdate";
 import { useVisibleSections } from "../../hooks/useVisibleSections";
 import { AnimatedSection } from "../../components/AnimatedSection/AnimatedSection";
 import { RightArrowIcon } from "../../assets/svg/RightArrowIcon";
+import { ImageLoader } from "../../components/ImageLoader/ImageLoader";
+import { BackgroundLoader } from "../../components/BackgroundLoader/BackgroundLoader";
 
 interface HomeProps {
   isLoadingComplete: boolean;
@@ -54,7 +56,7 @@ export const Home = () => {
             </div>
           </div>
           <div className="content-right">
-            <img src={me} alt="Vitor Lurici" />
+            <ImageLoader src={me} alt="Vitor Lurici" />
           </div>
         </div>
       </AnimatedSection>
@@ -66,28 +68,37 @@ export const Home = () => {
           </div>
           <div className="grid">
             <Link to={buildLink("/projects/vetlink")}>
-              <div className="item vetlink">
+              <BackgroundLoader
+                imageUrl="/portfolio/src/assets/images/vetlink-background.jpg"
+                className="item vetlink"
+              >
                 <p>2024</p>
                 <h2>VETLINK</h2>
                 <p>{translations[language].vetlinkDescription}</p>
                 <p className="view-git">{translations[language].viewGithub}</p>
-              </div>
+              </BackgroundLoader>
             </Link>
             <Link to={buildLink("/projects/cosmos")}>
-              <div className="item cosmos">
+              <BackgroundLoader
+                imageUrl="/portfolio/src/assets/images/cosmos-background.jpg"
+                className="item cosmos"
+              >
                 <p>2024</p>
                 <h2>COSMOS</h2>
                 <p>{translations[language].cosmosDescription}</p>
                 <p className="view-git">{translations[language].viewGithub}</p>
-              </div>
+              </BackgroundLoader>
             </Link>
             <Link to={buildLink("/projects/finance")}>
-              <div className="item finance">
+              <BackgroundLoader
+                imageUrl="/portfolio/src/assets/images/finance-background.jpg"
+                className="item finance"
+              >
                 <p>2023 - {translations[language].inProgress}</p>
                 <h2>FINANCE</h2>
                 <p>{translations[language].financeDescription}</p>
                 <p className="view-git">{translations[language].viewGithub}</p>
-              </div>
+              </BackgroundLoader>
             </Link>
           </div>
         </div>

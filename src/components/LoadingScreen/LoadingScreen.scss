@@ -44,6 +44,14 @@
       height: 56px;
       animation: spin 1s linear infinite;
     }
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
   }
 
   .bottom {
@@ -63,15 +71,6 @@
       color: #fff;
       letter-spacing: 2px;
     }
-  }
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
   }
 }
 

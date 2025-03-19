@@ -16,6 +16,10 @@ export const translations = {
     messageSent: "Message sent successfully!",
     completeCaptcha: "Please complete the reCAPTCHA.",
     errorSendingMessage: "Error sending message. Please try again.",
+    nameRequired: "Name is required",
+    emailRequired: "Email is required",
+    invalidEmail: "Invalid email address",
+    messageRequired: "Message is required",
   },
   "pt-br": {
     title: "Contato | Vitor Lurici - Desenvolvedor de Software",
@@ -34,5 +38,9 @@ export const translations = {
     messageSent: "Mensagem enviada com sucesso!",
     completeCaptcha: "Por favor, complete o reCAPTCHA.",
     errorSendingMessage: "Erro ao enviar a mensagem. Tente novamente.",
+    nameRequired: "O nome é obrigatório",
+    emailRequired: "O e-mail é obrigatório",
+    invalidEmail: "Endereço de e-mail inválido",
+    messageRequired: "A mensagem é obrigatória",
   },
 };

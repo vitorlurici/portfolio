@@ -1,4 +1,4 @@
-import { useState, useRef, ChangeEvent, FormEvent } from "react";
+import { useState, useRef, ChangeEvent, FormEvent, useEffect } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import "./Contact.scss";
 import useTitleUpdate from "../../hooks/useTitleUpdate";
@@ -20,6 +20,17 @@ export const Contact = () => {
     email: "",
     message: "",
   });
+  const [errors, setErrors] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [touched, setTouched] = useState({
+    name: false,
+    email: false,
+    message: false,
+  });
+  const [isSubmitted, setIsSubmitted] = useState(false);
   const messageTextareaRef = useRef<HTMLTextAreaElement>(null);
   const [showPopup, setShowPopup] = useState(false);
   const [isCaptchaVerified, setIsCaptchaVerified] = useState(false);
@@ -34,6 +45,45 @@ export const Contact = () => {
     }
   };
 
+  const validateName = (name: string) => {
+    if (!name.trim()) {
+      return translations[language].nameRequired;
+    }
+    return "";
+  };
+
+  const validateEmail = (email: string) => {
+    if (!email.trim()) {
+      return translations[language].emailRequired;
+    } else if (!/\S+@\S+\.\S+/.test(email)) {
+      return translations[language].invalidEmail;
+    }
+    return "";
+  };
+
+  const validateMessage = (message: string) => {
+    if (!message.trim()) {
+      return translations[language].messageRequired;
+    }
+    return "";
+  };
+
+  const updateErrors = () => {
+    const nameError = validateName(formData.name);
+    const emailError = validateEmail(formData.email);
+    const messageError = validateMessage(formData.message);
+
+    setErrors({
+      name: nameError,
+      email: emailError,
+      message: messageError,
+    });
+  };
+
+  useEffect(() => {
+    updateErrors();
+  }, [language]);
+
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -46,6 +96,41 @@ export const Contact = () => {
     if (name === "message" && messageTextareaRef.current) {
       adjustTextareaHeight(messageTextareaRef.current);
     }
+
+    if (errors[name as keyof typeof errors]) {
+      setErrors({
+        ...errors,
+        [name]: "",
+      });
+    }
+  };
+
+  const handleBlur = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name } = e.target;
+
+    setTouched({
+      ...touched,
+      [name]: true,
+    });
+
+    if (name === "name") {
+      setErrors({
+        ...errors,
+        name: validateName(formData.name),
+      });
+    } else if (name === "email") {
+      setErrors({
+        ...errors,
+        email: validateEmail(formData.email),
+      });
+    } else if (name === "message") {
+      setErrors({
+        ...errors,
+        message: validateMessage(formData.message),
+      });
+    }
   };
 
   const handleCaptchaChange = (value: string | null) => {
@@ -56,9 +141,23 @@ export const Contact = () => {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setIsSubmitted(true);
+
+    const nameError = validateName(formData.name);
+    const emailError = validateEmail(formData.email);
+    const messageError = validateMessage(formData.message);
+
+    if (nameError || emailError || messageError) {
+      setErrors({
+        name: nameError,
+        email: emailError,
+        message: messageError,
+      });
+      return;
+    }
 
     if (!isCaptchaVerified) {
-      alert(translations[language].completeCaptcha); // Tradução para o alerta do reCAPTCHA
+      alert(translations[language].completeCaptcha);
       return;
     }
 
@@ -106,7 +205,7 @@ export const Contact = () => {
           </div>
 
           <div className="right-content">
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} noValidate>
               <div className="form-group">
                 <label htmlFor="name">{translations[language].name}</label>
                 <input
@@ -116,9 +215,13 @@ export const Contact = () => {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
+                  onBlur={handleBlur}
                   maxLength={50}
                   required
                 />
+                {(touched.name || isSubmitted) && errors.name && (
+                  <span className="error">{errors.name}</span>
+                )}
               </div>
               <div className="form-group">
                 <label htmlFor="email">{translations[language].email}</label>
@@ -129,9 +232,13 @@ export const Contact = () => {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
+                  onBlur={handleBlur}
                   maxLength={50}
                   required
                 />
+                {(touched.email || isSubmitted) && errors.email && (
+                  <span className="error">{errors.email}</span>
+                )}
               </div>
               <div className="form-group">
                 <label htmlFor="message">
@@ -144,9 +251,13 @@ export const Contact = () => {
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
+                  onBlur={handleBlur}
                   rows={1}
                   required
                 />
+                {(touched.message || isSubmitted) && errors.message && (
+                  <span className="error">{errors.message}</span>
+                )}
               </div>
               <div className="recaptcha-wrapper">
                 <ReCAPTCHA
