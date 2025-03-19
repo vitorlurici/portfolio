@@ -37,6 +37,7 @@ export const Contact = () => {
   const recaptchaRef = useRef<ReCAPTCHA>(null);
   const { language } = useLanguage();
   const visibleSections = useVisibleSections(isLoadingComplete);
+  const popupRef = useRef<HTMLDivElement>(null);
 
   const adjustTextareaHeight = (textarea: HTMLTextAreaElement | null) => {
     if (textarea) {
@@ -190,6 +191,22 @@ export const Contact = () => {
     }
   };
 
+  const handleClickOutside = (event: MouseEvent) => {
+    if (popupRef.current && !popupRef.current.contains(event.target as Node)) {
+      setShowPopup(false);
+    }
+  };
+
+  useEffect(() => {
+    if (showPopup) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [showPopup]);
+
   useTitleUpdate(translations[language].title);
 
   return (
@@ -274,12 +291,14 @@ export const Contact = () => {
 
           {showPopup && (
             <div className="popup">
-              <div className="popup-content">
-                <div
-                  className="close-popup"
-                  onClick={() => setShowPopup(false)}
-                >
-                  <span>{translations[language].close}</span> <CloseIcon />
+              <div className="popup-content" ref={popupRef}>
+                <div className="close-container">
+                  <div
+                    className="close-popup"
+                    onClick={() => setShowPopup(false)}
+                  >
+                    <span>{translations[language].close}</span> <CloseIcon />
+                  </div>
                 </div>
                 <p>{translations[language].messageSent}</p>
               </div>

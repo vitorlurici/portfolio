@@ -124,37 +124,40 @@
         flex-direction: column;
         gap: 20px;
 
-        .close-popup {
+        .close-container {
           display: flex;
-          align-items: center;
           justify-content: end;
-          gap: 8px;
-          cursor: pointer;
+          .close-popup {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            cursor: pointer;
 
-          span {
-            font-size: 12px;
-            transition: 0.5s;
-            color: #cccccc;
-            letter-spacing: 2px;
-            font-weight: bold;
-          }
-
-          svg {
-            width: 16px;
-
-            g {
-              transition: 0.1s;
-              fill: #cccccc;
-            }
-          }
-
-          &:hover {
             span {
-              color: #ffffff;
+              font-size: 12px;
+              transition: 0.5s;
+              color: #cccccc;
+              letter-spacing: 2px;
+              font-weight: bold;
             }
+
             svg {
+              width: 16px;
+
               g {
-                fill: #ffffff;
+                transition: 0.1s;
+                fill: #cccccc;
+              }
+            }
+
+            &:hover {
+              span {
+                color: #ffffff;
+              }
+              svg {
+                g {
+                  fill: #ffffff;
+                }
               }
             }
           }
