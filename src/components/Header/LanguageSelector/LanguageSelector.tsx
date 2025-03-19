@@ -1,6 +1,8 @@
 import { useState } from "react";
 import "./LanguageSelector.scss";
 import { ArrowDownIcon } from "../../../assets/svg/ArrowDownIcon";
+import { BrFlag } from "../../../assets/svg/BrFlag";
+import { EuaFlag } from "../../../assets/svg/EuaFlag";
 
 interface LanguageSelectorProps {
   language: "en" | "pt-br";
@@ -18,18 +20,11 @@ export const LanguageSelector = ({
     setIsOpen(false);
   };
 
-  const brFlag = "/portfolio/flags/br-flag.jpeg";
-  const euaFlag = "/portfolio/flags/eua-flag.jpeg";
-
   return (
     <div className="language-selector">
       <div className="selected-language" onClick={() => setIsOpen(!isOpen)}>
         <div className="flag-container">
-          <img
-            src={language === "en" ? euaFlag : brFlag}
-            alt={language === "en" ? "EUA Flag" : "Brazil Flag"}
-            className="flag"
-          />
+          {language === "en" ? <EuaFlag /> : <BrFlag />}
         </div>
         <span className={`arrow ${isOpen ? "rotate" : ""}`}>
           <ArrowDownIcon />
@@ -43,11 +38,7 @@ export const LanguageSelector = ({
               handleLanguageChange(language === "en" ? "pt-br" : "en")
             }
           >
-            <img
-              src={language === "en" ? brFlag : euaFlag}
-              alt={language === "en" ? "Brazil Flag" : "EUA Flag"}
-              className="flag"
-            />
+            {language === "en" ? <BrFlag /> : <EuaFlag />}
           </div>
         </div>
       )}
