@@ -22,7 +22,7 @@ export const translations = {
     messageRequired: "Message is required",
   },
   "pt-br": {
-    title: "Contato | Vitor Lurici - Desenvolvedor de Software",
+    title: "Contato | Vitor Lurici - Engenheiro de Software",
     contact: "CONTATO",
     letsWork: "Vamos trabalhar juntos",
     gotProject:

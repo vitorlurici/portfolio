@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { useLocation } from "react-router-dom";
 import "./Menu.scss";
 import { CloseIcon } from "../../../assets/svg/CloseIcon";
 import { Link } from "react-router-dom";
@@ -16,6 +17,11 @@ export const SlideDownMenu = ({ isOpen, onClose, resetApp }: MenuProps) => {
   const { language } = useLanguage();
   const menuRef = useRef<HTMLDivElement>(null);
   const { buildLink, handleLinkClick } = useNavigation(resetApp);
+  const location = useLocation();
+
+  const isActive = (path: string) => {
+    return location.pathname === path || location.pathname === `/pt${path}`;
+  };
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -52,7 +58,9 @@ export const SlideDownMenu = ({ isOpen, onClose, resetApp }: MenuProps) => {
                 onClose();
               }}
             >
-              <h1>{translations[language].projects}</h1>
+              <h1 className={isActive("/") ? "active" : ""}>
+                {translations[language].projects}
+              </h1>
             </Link>
           </li>
           <li>
@@ -63,7 +71,9 @@ export const SlideDownMenu = ({ isOpen, onClose, resetApp }: MenuProps) => {
                 onClose();
               }}
             >
-              <h1>{translations[language].aboutMe}</h1>
+              <h1 className={isActive("/about-me") ? "active" : ""}>
+                {translations[language].aboutMe}
+              </h1>
             </Link>
           </li>
           <li>
@@ -74,7 +84,9 @@ export const SlideDownMenu = ({ isOpen, onClose, resetApp }: MenuProps) => {
                 onClose();
               }}
             >
-              <h1>{translations[language].contact}</h1>
+              <h1 className={isActive("/contact") ? "active" : ""}>
+                {translations[language].contact}
+              </h1>
             </Link>
           </li>
           <li>
