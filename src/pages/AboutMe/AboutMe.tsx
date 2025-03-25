@@ -1,4 +1,4 @@
-import { useOutletContext } from "react-router-dom";
+import { Link, useOutletContext } from "react-router-dom";
 import "./AboutMe.scss";
 import { translations } from "../../translations/about/translations";
 import { useLanguage } from "../../hooks/useLanguage";
@@ -65,6 +65,13 @@ export const AboutMe = () => {
               <JiraIcon />
             </div>
           </div>
+          <Link
+            to={translations[language].link}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button>{translations[language].downloadCV}</button>
+          </Link>
         </div>
       </AnimatedSection>
     </div>
