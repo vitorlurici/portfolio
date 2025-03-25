@@ -69,7 +69,6 @@ export const AboutMe = () => {
             to={translations[language].link}
             target="_blank"
             rel="noopener noreferrer"
-            download={"Vitor_Lurici_CV.pdf"}
           >
             <button>{translations[language].downloadCV}</button>
           </Link>
