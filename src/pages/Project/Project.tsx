@@ -9,6 +9,7 @@ import { AnimatedSection } from "../../components/AnimatedSection/AnimatedSectio
 import Error from "../Error/Error";
 import useTitleUpdate from "../../hooks/useTitleUpdate";
 import { ImageLoader } from "../../components/ImageLoader/ImageLoader";
+import { RightArrowIcon } from "../../assets/svg/RightArrowIcon";
 
 interface ProjectContentProps {
   isLoadingComplete: boolean;
@@ -54,14 +55,14 @@ const ProjectDetails = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <button>{project.getViewGithubText(language)}</button>
+                {project.getViewGithubText(language)} <RightArrowIcon />
               </Link>
               <Link
                 to={project.projectLink}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <button>{project.getViewProjectText(language)}</button>
+                {project.getViewProjectText(language)} <RightArrowIcon />
               </Link>
             </div>
             <div className="item">

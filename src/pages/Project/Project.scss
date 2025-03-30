@@ -33,6 +33,26 @@
         a {
           width: fit-content;
           text-wrap: nowrap;
+          color: #678184;
+          text-decoration: underline 2px;
+          display: flex;
+          align-items: center;
+          transition: color 0.3s;
+
+          &:hover {
+            color: #cccccc;
+
+            svg {
+              fill: #cccccc;
+            }
+          }
+
+          svg {
+            width: 20px;
+            height: 20px;
+            fill: #678184;
+            transition: fill 0.3s;
+          }
         }
 
         .technologies {
